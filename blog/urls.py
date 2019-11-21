@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from blog.views import ArticleView
+from blog.views import ArticleList
+from blog.views import ArticleDetail
 
 app_name = 'blog'
 
 urlpatterns = [
-    path('articles/', ArticleView.as_view(), name='home'),
+    # path('blog/', ArticleList.as_view(), name='home'),
+    path('api/', ArticleList.as_view(), name='api_home'),
+    path('api/<int:pk>/', ArticleDetail.as_view()),
+
 ]
