@@ -7,14 +7,21 @@
     <title>Document</title>
 </head>
 <body>
+<h1>test</h1>
 {% for article in articles %}
-Title: {{article.title}}
+<b>Title:</b> {{article.title}}
 <br>
-Note: {{article.article|linebreaksbr }}
+<b>Note:</b> {{article.article|linebreaksbr }}
 <br>
-
-
 {% endfor %}
-    {% comment %} {{ articles }} {% endcomment %}
+<hr>
+{% for a in author %}
+    {{a.name}}
+    <br>
+    {{a.email}}
+    <br>
+{% endfor %}
+
+
 </body>
 </html>

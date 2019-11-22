@@ -1,4 +1,6 @@
-from .models import Article
+# from django.shortcuts import render
+from django.views.generic import ListView, DetailView
+from .models import Article, Author
 from .serializers import ArticleSerializer
 from rest_framework import generics
 
@@ -10,79 +12,25 @@ class ArticleDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
 
+class ArticleListView(ListView):
+    # model = Article
+    context_object_name = 'articles'
+    template_name = "blog/blog.html"
+    # queryset = Article.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(ArticleListView, self).get_context_data(**kwargs)
+        context['articles'] = Article.objects.all()
+        context['author'] = Author.objects.all()
+        return context
+    queryset = get_context_data
 
-# from django.shortcuts import render
-# from .models import Article
-# from rest_framework.response import Response
-# from rest_framework.views import APIView
-# from rest_framework import status
-# from django.http import Http404
-# from .serializers import ArticleSerializer
-# from rest_framework import mixins
-# from rest_framework import generics
+
+class ArticleDetailView(DetailView):
+    model = Article
+    template_name = "blog/blog_detail.html"
 
 
-# # def home(request):
-# # 	articles = Article.objects.all()
-# # 	return render(request, 'blog/home.html', {'articles':articles})
-# class ArticleDetail(mixins.RetrieveModelMixin,
-#                     mixins.UpdateModelMixin,
-#                     mixins.DestroyModelMixin,
-#                     generics.GenericAPIView):
-#     queryset = Article.objects.all()
-#     serializer_class = ArticleSerializer
-
-#     def get(self, request, *args, **kwargs):
-#         return self.retrieve(request, *args, **kwargs)
-
-#     def put(self, request, *args, **kwargs):
-#         return self.update(request, *args, **kwargs)
-
-#     def delete(self, request, *args, **kwargs):
-#         return self.destroy(request, *args, **kwargs)
-# # -------------------
-# class ArticleView(APIView):
-# #     def get_object(self, pk):
-# #         try:
-# #             return Article.objects.get(pk=pk)
-# #         except Article.DoesNotExist:
-# #             raise Http404
-
-# #     def get(self, request, pk, format=None):
-# #         article = self.get_object(pk)
-# #         serializer = ArticleSerializer(article)
-# #         return Response(serializer.data)
-
-# #     def put(self, request, pk, format=None):
-# #         article = self.get_object(pk)
-# #         serializer = ArticleSerializer(article, data=request.data)
-# #         if serializer.is_valid():
-# #             serializer.save()
-# #             return Response(serializer.data)
-# #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-# #     def delete(self, request, pk, format=None):
-# #         article = self.get_object(pk)
-# #         article.delete()
-# #         return Response(status=status.HTTP_204_NO_CONTENT)
-# # ----------------------
-#     def get(self, request):
-#         articles = Article.objects.all()
-#         serializer = ArticleSerializer(articles, many=True)
-#         return Response({"articles": serializer.data})
-
-#     def post(self, request, format=None):
-#         serializer = ArticleSerializer(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-#     # def post(self, request):
-#     #     # article = request.data.get('article')
-#     #     # Create an article from the above data
-#     #     serializer = ArticleSerializer(data=request.data)
-#     #     if serializer.is_valid(raise_exception=True):
-#     #         article_saved = serializer.save()
-#     #     return Response(serializer.data, status=status.HTTP_201_CREATED)
-#     # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+# class AuthorListView(ListView):
+#     context_object_name = 'author'
+#     queryset = Author.objects.all()
+#     template_name = "blog/home.html"
