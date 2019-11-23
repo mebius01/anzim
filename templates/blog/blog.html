@@ -3,20 +3,29 @@
 <div>
     <h1>test</h1>
 
-{% block article %}
-{% for article in articles %}
-<b>Title:</b> {{article.title}}
-<br>
-<b>Note:</b> {{article.article|linebreaksbr }}
-<br>
-{% endfor %}
-<hr>
-{% for a in author %}
-    {{a.name}}
-    <br>
-    {{a.email}}
-    <br>
-{% endfor %}
-{% endblock article %}
-    
+{% block content %}
+    <div class="aside-left">
+        aside-left
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod eos possimus optio reiciendis dolorum eius nam molestias vitae beatae deserunt ex pariatur, maxime laboriosam repellat delectus libero quidem! Nulla, rem!
+    </div>
+    <div class="article">
+            {% for article in articles %}
+            <b>Title:</b> {{article.title}}
+            <br>
+            <b>Note:</b> {{article.article|linebreaksbr }}
+            <br>
+            {% endfor %}
+            <hr>
+            {% for a in author %}
+                {{a.name}}
+                <br>
+                {{a.email}}
+                <br>
+            {% endfor %}
+    </div>
+    <div class="aside-right">
+        asidr-right
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae harum ea quisquam est saepe illum cumque id in minus suscipit! Doloremque eum cupiditate quo vel perspiciatis non magni enim veniam!
+    </div>
+{% endblock content %}
 </div>
