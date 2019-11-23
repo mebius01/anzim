@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>GRPiglet Note & Article</title>
+</head>
+<body>
+    <div class="header">
+        header
+    </div>
+    <div class="aside-left">
+        {% block aside_left %}
+            {{aside_left}}
+        {% endblock aside_left %}
+    </div>
+    <div class="article">
+        {% block article %}
+            {{article}}
+        {% endblock article %}
+    </div>
+    <div class="aside-right">
+        {% block aside_right %}
+            {{aside_right}}
+        {% endblock aside_right %}
+    </div>
+    <footer>
+        footer
+    </footer>
+</body>
+</html>
