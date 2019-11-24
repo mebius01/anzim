@@ -19,7 +19,9 @@
                 <input type="text" placeholder="Search" name="q">
             </div>
         </form>
-
+        {% block registration %}
+            {{registration}}
+        {% endblock registration %}
     </div>
     <div class="content">
         {% block content %}

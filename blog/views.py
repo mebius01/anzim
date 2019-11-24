@@ -23,7 +23,6 @@ class TagMixin(object):
 
 class ArticleListView(TagMixin, ListView):
     model = Article
-    # context_object_name = 'articles'
     template_name = "blog/blog.html"
     def get_queryset(self):
         query = self.request.GET.get('q')
