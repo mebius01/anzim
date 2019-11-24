@@ -19,7 +19,9 @@ body {
         "footer";
     gap: 20px;
 }
-
+h2 {
+    color: #edb021;
+}
 a {
     color: var(--LinkCo0lor);
     text-decoration: none;

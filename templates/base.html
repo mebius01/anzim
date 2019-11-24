@@ -13,6 +13,13 @@
 <body>
     <div class="header">
         <a href="/">Home</a>
+
+        <form role="search" action="{% url 'blog:blog_list' %}">
+            <div>
+                <input type="text" placeholder="Search" name="q">
+            </div>
+        </form>
+
     </div>
     <div class="content">
         {% block content %}

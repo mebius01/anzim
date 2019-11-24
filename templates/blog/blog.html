@@ -14,12 +14,13 @@
     <div class="article">
             <hr>
             {% for article in object_list %}
-                <h2>{{article.title}}</h2>
+                <a href="{{article.get_absolute_url}}"><h2>{{article.title}}</h2></a>
                 <hr>
-                {{article.article|linebreaksbr }}
+                {% autoescape off %} {{article.article }} {% endautoescape %}
                 <hr>
+                <strong>Tags:</strong>
                 {% for t in article.tags.get_queryset %}
-                    <a href="/tags/{{t.slug}}">{{t.name}} | </a>
+                    <a href="/tags/{{t.slug}}">{{t.name}}</a> |
                 {% endfor %}
                 <hr>
             {% endfor %}

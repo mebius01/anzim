@@ -4,6 +4,7 @@ from .models import Article, Author
 from .serializers import ArticleSerializer
 from rest_framework import generics
 from taggit.models import Tag
+from django.db.models import Q
 # from taggit.views import TagListMixin
 
 class ArticleList(generics.ListCreateAPIView):
@@ -22,8 +23,17 @@ class TagMixin(object):
 
 class ArticleListView(TagMixin, ListView):
     model = Article
-    context_object_name = 'articles'
+    # context_object_name = 'articles'
     template_name = "blog/blog.html"
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            object_list = self.model.objects.filter(
+                Q(title__icontains = query) |
+                Q(article__icontains = query))
+        else:
+            object_list = self.model.objects.all().order_by('-publish')
+        return object_list
 
 class TagView(TagMixin, ListView):
     model =Article
