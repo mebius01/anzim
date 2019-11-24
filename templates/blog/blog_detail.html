@@ -2,23 +2,24 @@
 {% load static %}
 {% block content %}
     <div class="aside-left">
+        <hr>
         {% for article in articles %}
             <a href="/{{ article.get_absolute_url }}">{{article.title}}</a>
             <hr>
         {% endfor %}
     </div>
     <div class="article">
+        <hr>
         <h1>{{article.title}}</h1>
         <hr>
-        {{article.article|linebreaksbr }}
-        <br>
-        <b>TAGS</b>
-        {% for i in article.tags.similar_objects %}
-          <a href="/{{i.get_absolute_url}}">{{i.title}}</a>
-        {% endfor %}
+        {% autoescape off %} {{article.article }} {% endautoescape %}
+        
     </div>
     <div class="aside-right">
-        asidr-right
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae harum ea quisquam est saepe illum cumque id in minus suscipit! Doloremque eum cupiditate quo vel perspiciatis non magni enim veniam!
+        <hr>
+        {% for i in article.tags.similar_objects %}
+            <a href="/{{i.get_absolute_url}}">{{i.title}}</a>
+            <hr>
+        {% endfor %}
     </div>
 {% endblock content %}

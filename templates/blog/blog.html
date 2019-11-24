@@ -12,32 +12,24 @@
         {% endfor %}
     </div>
     <div class="article">
-            <b>Tags</b>
-            {% for tag in tags %}
-              <a href="/tags/{{tag.slug}}">{{tag.name}} - {{ tag.num_times }}</a>
-            {% endfor %}
             <hr>
             {% for article in object_list %}
-            <b>Title:</b> {{article.title}}
-            <br>
-            <b>Note:</b> {{article.article|linebreaksbr }}
-            <hr>
-            {% for t in article.tags.get_queryset %}
-            <a href="/tags/{{t.slug}}">{{t.name}}</a>
-            {% endfor %}
-            <hr>
-            {% endfor %}
-            <hr>
-            {% for a in author %}
-                {{a.name}}
-                <br>
-                {{a.email}}
-                <br>
-            <hr>
+                <h2>{{article.title}}</h2>
+                <hr>
+                {{article.article|linebreaksbr }}
+                <hr>
+                {% for t in article.tags.get_queryset %}
+                    <a href="/tags/{{t.slug}}">{{t.name}} | </a>
+                {% endfor %}
+                <hr>
             {% endfor %}
     </div>
     <div class="aside-right">
-        
+        <hr>
+        {% for tag in tags %}
+            <a href="/tags/{{tag.slug}}">{{tag.name}}</a> {{ tag.num_times }}
+            <hr>
+        {% endfor %}
     </div>
 {% endblock content %}
 </div>

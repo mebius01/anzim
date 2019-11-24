@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.utils import timezone
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Article(models.Model):
 
@@ -12,8 +13,8 @@ class Article(models.Model):
 	)
 	title = models.CharField(max_length=250)
 	slug = models.SlugField(max_length=250, unique_for_date='publish', verbose_name='URL',)# default=slugify('0'))
-	# artile = RichTextUploadingField(blank=True, default='')
-	article = models.TextField(blank=True, default='')
+	article = RichTextUploadingField(blank=True, default='')
+	# article = models.TextField(blank=True, default='')
 	publish = models.DateTimeField(default=timezone.now)
 	created = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
