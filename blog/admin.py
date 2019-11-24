@@ -3,7 +3,7 @@ from .models import Article, Author
 # Register your models here.
 
 class ArticleAdmin(admin.ModelAdmin):
-	list_display = ('title', 'slug', 'publish', 'status', 'get_absolute_url',)
+	list_display = ('title', 'id', 'slug', 'publish', 'status', 'get_absolute_url',)
 	prepopulated_fields = {'slug': ('title',)}
 
 class AuthorAdmin(admin.ModelAdmin):

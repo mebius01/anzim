@@ -5,15 +5,27 @@
 
 {% block content %}
     <div class="aside-left">
-        aside-left
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod eos possimus optio reiciendis dolorum eius nam molestias vitae beatae deserunt ex pariatur, maxime laboriosam repellat delectus libero quidem! Nulla, rem!
+        <hr>
+        {% for article in object_list %}
+            <a href="{{article.get_absolute_url}}">{{article.title}}</a>
+            <hr>
+        {% endfor %}
     </div>
     <div class="article">
-            {% for article in articles %}
+            <b>Tags</b>
+            {% for tag in tags %}
+              <a href="/tags/{{tag.slug}}">{{tag.name}} - {{ tag.num_times }}</a>
+            {% endfor %}
+            <hr>
+            {% for article in object_list %}
             <b>Title:</b> {{article.title}}
             <br>
             <b>Note:</b> {{article.article|linebreaksbr }}
-            <br>
+            <hr>
+            {% for t in article.tags.get_queryset %}
+            <a href="/tags/{{t.slug}}">{{t.name}}</a>
+            {% endfor %}
+            <hr>
             {% endfor %}
             <hr>
             {% for a in author %}
@@ -21,11 +33,11 @@
                 <br>
                 {{a.email}}
                 <br>
+            <hr>
             {% endfor %}
     </div>
     <div class="aside-right">
-        asidr-right
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae harum ea quisquam est saepe illum cumque id in minus suscipit! Doloremque eum cupiditate quo vel perspiciatis non magni enim veniam!
+        
     </div>
 {% endblock content %}
 </div>

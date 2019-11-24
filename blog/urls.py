@@ -21,7 +21,8 @@ app_name = 'blog'
 
 urlpatterns = [
     path('', ArticleListView.as_view(), name='blog_list'),
-    path('<slug:slug>/', ArticleDetailView.as_view(), name='blog_detail'),
+    path('<slug:slug>/', ArticleDetailView.as_view(), name='article_detail'),
+    path('tags/<slug:tag>/', TagView.as_view(), name="food-tag-list",),
     path('api/list_all/', ArticleList.as_view(), name='api_home'),
     path('api/<int:pk>/', ArticleDetail.as_view(), name='id_post'),
 

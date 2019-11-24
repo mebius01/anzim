@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>BLOG Detail</h1>
-    {{article.title}}
-    <br>
-    {{article.article|linebreaksbr }}
-    <br>
-    {{object.title}}
-    <br>
-    {{object.status}}
-    
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="aside-left">
+        {% for article in articles %}
+            <a href="/{{ article.get_absolute_url }}">{{article.title}}</a>
+            <hr>
+        {% endfor %}
+    </div>
+    <div class="article">
+        <h1>{{article.title}}</h1>
+        <hr>
+        {{article.article|linebreaksbr }}
+        <br>
+        <b>TAGS</b>
+        {% for i in article.tags.similar_objects %}
+          <a href="/{{i.get_absolute_url}}">{{i.title}}</a>
+        {% endfor %}
+    </div>
+    <div class="aside-right">
+        asidr-right
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae harum ea quisquam est saepe illum cumque id in minus suscipit! Doloremque eum cupiditate quo vel perspiciatis non magni enim veniam!
+    </div>
+{% endblock content %}
