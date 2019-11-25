@@ -33,6 +33,8 @@ class ArticleListView(TagMixin, ListView):
                 Q(article__icontains = query))
         else:
             object_list = self.model.objects.all().order_by('-publish')
+        return object_list
+
 # Ограничения доступа
         # if self.request.user.is_anonymous:
         #     return object_list.filter(status='public')
