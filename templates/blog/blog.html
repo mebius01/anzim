@@ -6,8 +6,8 @@
 {% block content %}
     <div class="aside-left">
         <hr>
-        {% for article in object_list %}
-            <a href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
+        {% for article in title_list %}
+            <a href="/{{ article.get_absolute_url }}">{{article.title}}</a>
             <hr>
         {% endfor %}
     </div>

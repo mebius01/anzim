@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_list_or_404
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Article, Author
 from .serializers import ArticleSerializer
 from rest_framework import generics
 from taggit.models import Tag
 from django.db.models import Q
-# from taggit.views import TagListMixin
 
 class ArticleList(generics.ListCreateAPIView):
     queryset = Article.objects.all()
@@ -33,7 +33,11 @@ class ArticleListView(TagMixin, ListView):
                 Q(article__icontains = query))
         else:
             object_list = self.model.objects.all().order_by('-publish')
-        return object_list
+# Ограничения доступа
+        # if self.request.user.is_anonymous:
+        #     return object_list.filter(status='public')
+        # else:
+        #     return object_list
 
 class TagView(TagMixin, ListView):
     model =Article
@@ -44,8 +48,3 @@ class TagView(TagMixin, ListView):
 class ArticleDetailView(DetailView):
     model = Article
     template_name = "blog/blog_detail.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['articles'] = Article.objects.all()
-        return context
