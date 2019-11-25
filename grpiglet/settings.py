@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
 
@@ -159,15 +159,6 @@ CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.j
 CKEDITOR_CONFIGS = {
     'default': {
         'skin': 'moono',
-        'toolbar_MyCustomToolbar': [
-            {'name': 'basic', 'items': [
-                'Source',
-                '-',
-                'Bold',
-                'Italic',
-                'CodeSnippet'  # add the codesnippet button name
-            ]}
-        ],
         # https://github.com/django-ckeditor/django-ckeditor/tree/master/ckeditor/static/ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles
         # https://github.com/isagalaev/highlight.js/tree/master/src/styles
         'codeSnippet_theme': 'railscasts',

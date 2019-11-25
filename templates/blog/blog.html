@@ -7,28 +7,44 @@
     <div class="aside-left">
         <hr>
         {% for article in object_list %}
-            <a href="{{article.get_absolute_url}}">{{article.title}}</a>
+            <a href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
             <hr>
         {% endfor %}
     </div>
     <div class="article">
             <hr>
             {% for article in object_list %}
-                <a href="{{article.get_absolute_url}}"><h2>{{article.title}}</h2></a>
+                <a href="{% url 'blog:article_detail' article.slug %}"><h2>{{article.title}}</h2></a>
                 <hr>
                 {% autoescape off %} {{article.article }} {% endautoescape %}
                 <hr>
                 <strong>Tags:</strong>
-                {% for t in article.tags.get_queryset %}
-                    <a href="/tags/{{t.slug}}">{{t.name}}</a> |
+                {% for tag in article.tags.get_queryset %}
+                    <a href="/tags/{{tag.slug}}">{{tag.name}}</a> |
                 {% endfor %}
                 <hr>
             {% endfor %}
+        {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+        {% endif %}
     </div>
     <div class="aside-right">
         <hr>
         {% for tag in tags %}
             <a href="/tags/{{tag.slug}}">{{tag.name}}</a> {{ tag.num_times }}
+            {% comment %} <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> {{ tag.num_times }} {% endcomment %}
             <hr>
         {% endfor %}
     </div>
