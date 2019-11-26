@@ -9,7 +9,7 @@
 *.jpg
 *.png
 fixtures/
-__pycache__/
+/__pycache__/*
 migrations/
 local_settings.py
 db.sqlite3
@@ -22,4 +22,4 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-author_headshots/EJPU6txXYAIikqv.jpeg
+static_root/*
