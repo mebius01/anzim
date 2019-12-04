@@ -43,8 +43,12 @@ INSTALLED_APPS = [
     'taggit_serializer',
     'debug_toolbar',
     'ckeditor',
-    'accounts',
+    'corsheaders',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    'http://192.168.0.57:8081',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,6 +59,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = 'grpiglet.urls'
