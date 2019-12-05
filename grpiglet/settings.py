@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-
 import os
+import environ
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,8 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'blog',
+    'accounts',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'rest_framework',
     'taggit',
     'taggit_serializer',
@@ -160,8 +169,6 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.profiling.ProfilingPanel',
 ]
 
-LOGIN_REDIRECT_URL =  '/'
-
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_CONFIGS = {
     'default': {
@@ -186,6 +193,35 @@ CKEDITOR_CONFIGS = {
             ]),
     }
 }
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+# Определяет срок действия писем с подтверждением по электронной почте
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS=3
+# Пользователь обязан передать адрес электронной почты при регистрации.
+ACCOUNT_EMAIL_REQUIRED = True
+# Определяет метод проверки электронной почты при регистрации ("mandatory" "optional" "none")
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+# Предел попыток входа в систему
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = 5
+# Период времени в секундах от последней неудачной попытки
+ACCOUNT_LOGIN_ATTEMPTS_TIMEOUT= 400
+# URL (или имя URL), к которому нужно вернуться после выхода пользователя из системы
+ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+
+
+#EMAIL
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env.str("EMAIL_HOST")
+EMAIL_PORT = env.int("EMAIL_PORT")
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
+
 
 # CKEDITOR_CONFIGS = {
 #     'default': {
