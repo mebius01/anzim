@@ -13,6 +13,12 @@
         <h1>{{article.title}}</h1>
         <hr>
         {% autoescape off %} {{article.article }} {% endautoescape %}
+        <hr>
+       {% for item in article.tags.get_queryset %}
+            <a href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
+       {% endfor %}
+       <hr>
+       {{article.updated|date:"d M Y"}}
     </div>
     <div class="aside-right">
         <hr>

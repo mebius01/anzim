@@ -19,8 +19,8 @@
                 {% autoescape off %} {{article.article|truncatewords:42 }} {% endautoescape %}
                 <hr>
                 <strong>Tags:</strong>
-                {% for tag in article.tags.get_queryset %}
-                    <a href="/tags/{{tag.slug}}">{{tag.name}}</a> |
+                {% for item in article.tags.get_queryset %}
+                    <a href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
                 {% endfor %}
                 <hr>
             {% endfor %}
