@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import os
 import environ
-# env = environ.Env()
+env = environ.Env()
 # reading .env file
 environ.Env.read_env()
 
@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
+ALLOWED_HOSTS = tuple(os.environ.get('ALLOWED_HOSTS', default=[]))
 
 SECURE_HSTS_SECONDS = os.environ.get('SECURE_HSTS_SECONDS', default=False)
 SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', default=False)
