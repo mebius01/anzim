@@ -26,14 +26,3 @@ class Article(models.Model):
 
 	def get_absolute_url(self):
 		return (self.slug)
-
-class Author(models.Model):
-    salutation = models.CharField(max_length=10)
-    name = models.CharField(max_length=200)
-    email = models.EmailField()
-    headshot = models.ImageField(upload_to='author_headshots')
-
-    def __str__(self):
-        return self.name
-
-# Create your models here.

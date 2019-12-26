@@ -11,26 +11,29 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 import os
 import environ
-env = environ.Env()
+# env = environ.Env()
 # reading .env file
 environ.Env.read_env()
-
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$l9yof3&h3pmh!5^5)3c3n_9bb9@uyrgfo0p4ogw)84puf_v=n'
-
-# SECURITY WARNING: don't run with debug turned on in production!
+SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS')
 
-ALLOWED_HOSTS = []
-
+SECURE_HSTS_SECONDS = os.environ.get('SECURE_HSTS_SECONDS', default=False)
+SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', default=False)
+SECURE_HSTS_INCLUDE_SUBDOMAINS = os.environ.get('SECURE_HSTS_INCLUDE_SUBDOMAINS', default=False)
+SECURE_CONTENT_TYPE_NOSNIFF = os.environ.get('SECURE_CONTENT_TYPE_NOSNIFF', default=False)
+SECURE_BROWSER_XSS_FILTER = os.environ.get('SECURE_BROWSER_XSS_FILTER', default=False)
+SECURE_SSL_REDIRECT = os.environ.get('SECURE_SSL_REDIRECT', default=False)
+SESSION_COOKIE_SECURE = os.environ.get('SESSION_COOKIE_SECURE', default=False)
+CSRF_COOKIE_SECURE = os.environ.get('CSRF_COOKIE_SECURE', default=False)
+X_FRAME_OPTIONS = os.environ.get('X_FRAME_OPTIONS', default='SAMEORIGIN')
 
 # Application definition
 
@@ -100,12 +103,21 @@ WSGI_APPLICATION = 'anzim.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': os.environ.get("DB_ENGINE"),
+        'NAME': os.environ.get("DB_NAME"),
+        'USER': os.environ.get("DB_USER"),
+        'PASSWORD': os.environ.get("DB_PASSWORD"),
+        'HOST': os.environ.get("DB_HOST"),
+        'PORT': os.environ.get("DB_PORT"),
     }
 }
 
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'db.sqlite3',
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -216,12 +228,13 @@ ACCOUNT_LOGOUT_REDIRECT_URL = '/'
 
 
 #EMAIL
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = env.str("EMAIL_HOST")
-EMAIL_PORT = env.int("EMAIL_PORT")
-EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
-EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
-EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_PORT = os.environ.get("EMAIL_PORT")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
 
 
 # CKEDITOR_CONFIGS = {

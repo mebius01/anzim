@@ -2,7 +2,7 @@ from django.shortcuts import render, get_list_or_404
 from django.views.generic import ListView, DetailView
 from rest_framework import viewsets
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Article, Author
+from .models import Article
 from .serializers import ArticleSerializer
 from rest_framework import generics
 from rest_framework.views import APIView
