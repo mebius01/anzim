@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_list_or_404
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from rest_framework import viewsets
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Article
@@ -53,3 +53,10 @@ class TagView(TagMixin, ListView):
 class ArticleDetailView(DetailView):
     model = Article
     template_name = "blog/blog_detail.html"
+
+class About(TemplateView):
+    template_name = "blog/about.html"
+
+class Portfolio(TemplateView):
+    template_name = "blog/portfolio.html"
+

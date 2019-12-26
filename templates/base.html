@@ -13,6 +13,9 @@
 <body>
     <div class="header">
         <a href="/">Home</a>
+        <a href="{% url 'blog:about' %}">About</a>
+        <a href="{% url 'blog:portfolio' %}">Portfolio</a>
+
 
         <form role="search" action="{% url 'blog:blog_list' %}">
             <div>
