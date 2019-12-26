@@ -18,10 +18,10 @@
                 <hr>
                 {% autoescape off %} {{article.article|truncatewords:42 }} {% endautoescape %}
                 <hr>
-                <strong>Tags:</strong>
                 {% for item in article.tags.get_queryset %}
                     <a href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
                 {% endfor %}
+                {{article.updated|date:"d M Y"}}
                 <hr>
             {% endfor %}
         {% if is_paginated %}
