@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-<div>
-    <h1>test</h1>
-
 {% block content %}
     <div class="aside-left">
         <hr>
@@ -12,20 +9,18 @@
         {% endfor %}
     </div>
     <div class="article">
-            <hr>
             {% for article in object_list %}
-                <a href="{% url 'blog:article_detail' article.slug %}"><h2>{{article.title}}</h2></a>
-                <hr>
-                {% autoescape off %} {{article.article|truncatewords:42 }} {% endautoescape %}
-                <hr>
+                <a href="{% url 'blog:article_detail' article.slug %}"><h2>{{article.title}}</h2></a>                {% comment %} {% autoescape off %} {{article.article }} {% endautoescape %} {% endcomment %}
+               {% autoescape off %} {{article.article|truncatewords:42 }} {% endautoescape %}
+               <br><hr>
                 {% for item in article.tags.get_queryset %}
-                    <a href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
+                    <a href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a> | 
                 {% endfor %}
                 {{article.updated|date:"d M Y"}}
-                <hr>
+                <br><hr>
             {% endfor %}
         {% if is_paginated %}
-        <div class="pagination">
+        <div class="pagination" style="background-color: rgb(221, 242, 252);">
             <span class="page-links">
                 {% if page_obj.has_previous %}
                     <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
@@ -52,4 +47,3 @@
         {% endfor %}
     </div>
 {% endblock content %}
-</div>
