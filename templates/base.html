@@ -12,7 +12,12 @@
 </head>
 <body>
     <div class="header">
-        <a href="/">Home</a>
+        
+        <div class="logo"><a href="/">
+            <span class="eight">8</span>
+            <br>
+            <span class="th">th</span>
+        </a></div>
         <a href="{% url 'blog:about' %}">About</a>
         <a href="{% url 'blog:portfolio' %}">Portfolio</a>
         <form role="search" action="{% url 'blog:blog_list' %}">
