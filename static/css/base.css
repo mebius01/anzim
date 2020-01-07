@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Tamma&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Courier+Prime:400,700&display=swap');
 html, body {
     width: 100%;
     height: 100%;
-    font-family: Montserrat;
+    font-family: 'Montserrat', monospace;
 }
 :root {
     --TextColor: #3a3a3a;
@@ -21,14 +21,13 @@ body {
         "footer";
     gap: 20px;
 }
-h2 {
-    color: #edb021;
-}
+
 a {
-    color: var(--LinkCo0lor);
+    color: gray;
     text-decoration: none;
     font-weight: 600;
 }
+
 hr{
     align: center;
     width: 100%;
@@ -74,7 +73,6 @@ hr{
     left: 6px;
     top: 10px;
 }
-
 .portfolio, .about{
     color: gray;
     margin: auto;
@@ -106,9 +104,51 @@ hr{
     padding-right: 12px;
     grid-area: aside-left;
 }
+.article-menu, .tags-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gray;
+}
+.article-menu {
+    border: 1px solid;
+    padding: 4px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+h2 .article-title{
+    color: rgb(80, 80, 80);
+    font-weight: 900;
+    border-bottom: 1px solid;
+    padding-bottom: 6px;
+}
 .article {
     padding: 0 12px 0 12px;
     grid-area: article;
+    margin-bottom: 150px;
+    /* border: 1px solid; */
+
+}
+.footer-article{
+    margin: 20px 0px 40px 0;
+    /* border: 1px solid; */
+    position: relative;
+}
+.tags-title .tag {
+    border: 1px gray solid;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 5px;
+    color: gray;
+    background-color: var(--BackColor);
+}
+.date{
+    color: grey;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    /* float: right; */
 }
 .aside-right {
     padding-left: 12px;

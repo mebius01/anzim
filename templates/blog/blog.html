@@ -2,48 +2,58 @@
 {% load static %}
 {% block content %}
     <div class="aside-left">
-        <hr>
         {% for article in title_list %}
-            <a href="{{ article.get_absolute_url }}">{{article.title}}</a>
-            <hr>
+            <div class="article-menu">
+                    <a href="{{ article.get_absolute_url }}">{{article.title}}</a>
+            </div>
         {% endfor %}
     </div>
     <div class="article">
             {% for article in object_list %}
-                <a href="{% url 'blog:article_detail' article.slug %}"><h2>{{article.title}}</h2></a>                {% comment %} {% autoescape off %} {{article.article }} {% endautoescape %} {% endcomment %}
-               {% autoescape off %} {{article.article|truncatewords:42 }} {% endautoescape %}
-               <br><hr>
-                {% for item in article.tags.get_queryset %}
-                    <a href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a> | 
-                {% endfor %}
-                {{article.updated|date:"d M Y"}}
-                <br><hr>
+                <h2>
+                    <a class="article-title" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
+                </h2>
+                <div class="body-article">
+                    {% comment %} {% autoescape off %} {{article.article }} {% endautoescape %} {% endcomment %}
+                    {% autoescape off %} {{article.article|truncatewords:42 }} {% endautoescape %}
+                </div>
+                <div class="footer-article">
+                    <div class="tags-title"><i class="fas fa-tags"></i>
+                        {% for item in article.tags.get_queryset %}
+                            <a class="tag" href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="date">
+                            <i class="fas fa-calendar-week"></i> {{article.updated|date:"d M Y"}}
+                    </div>
+                </div>
             {% endfor %}
-        {% if is_paginated %}
-        <div class="pagination" style="background-color: rgb(221, 242, 252);">
-            <span class="page-links">
-                {% if page_obj.has_previous %}
-                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
-                    {% for i in paginator.page_range %}
-                        {% if page_obj.number == i %}
-                            <span style='color:red' >{{ i }}</span>
-                        {% else %}
-                            <a href="?page={{ i }}">{{ i }}</a>
-                        {% endif %}
-                    {% endfor %}
-                {% if page_obj.has_next %}
-                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
-                {% endif %}
-            </span>
-        </div>
-        {% endif %}
     </div>
     <div class="aside-right">
-        <hr>
         {% for tag in tag_list %}
-            <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> {{ tag.num_times }}
-            <hr>
+            <div class="tags-title">
+                <i class="fas fa-tags"></i> <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> {{ tag.num_times }}
+            </div>
         {% endfor %}
     </div>
+    {% if is_paginated %}
+    <div class="pagination" style="background-color: rgb(221, 242, 252);">
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+                <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <span style='color:red' >{{ i }}</span>
+                    {% else %}
+                        <a href="?page={{ i }}">{{ i }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% if page_obj.has_next %}
+                <a href="/?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+</div>
 {% endblock content %}
