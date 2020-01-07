@@ -12,28 +12,16 @@
 </head>
 <body>
     <div class="header">
-        
-        <div class="logo"><a href="/">
-            <span class="eight">8</span>
-            <br>
-            <span class="th">th</span>
-        </a></div>
-        <a href="{% url 'blog:about' %}">About</a>
-        <a href="{% url 'blog:portfolio' %}">Portfolio</a>
-        <form role="search" action="{% url 'blog:blog_list' %}">
-            <div>
+        <div class="logo">
+            <a href="/"><span class="eight">8-th</span></a>
+        </div>
+        <a class="about" href="{% url 'blog:about' %}">About</a>
+        <a class="portfolio" href="{% url 'blog:portfolio' %}">Portfolio</a>
+        <div class="search">
+            <form role="search" action="{% url 'blog:blog_list' %}">
                 <input type="text" placeholder="Search" name="q">
-            </div>
-        </form>
-        {% block registration %}
-            {{registration}}
-        {% endblock registration %}
-           {% comment %} {% if user.is_authenticated %}
-     <li>User: {{ user.get_username }}</li>
-     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-   {% else %}
-     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
-   {% endif %}  {% endcomment %}
+            </form>
+        </div>
     </div>
     <div class="content">
         {% block content %}

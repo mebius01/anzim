@@ -27,7 +27,7 @@ class TagMixin(object):
 class ArticleListView(TagMixin, ListView):
     model = Article
     template_name = "blog/blog.html"
-    paginate_by = 1
+    paginate_by = 2
     def get_queryset(self):
         query = self.request.GET.get('q')
         if query:
