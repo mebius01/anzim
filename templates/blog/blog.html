@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block title %}
+    <title>Список статей</title>
+{% endblock title %}
+
 {% block content %}
     <div class="aside-left">
         {% for article in title_list %}
@@ -14,7 +19,6 @@
                     <a class="article-title" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
                 </h2>
                 <div class="body-article">
-                    {% comment %} {% autoescape off %} {{article.article }} {% endautoescape %} {% endcomment %}
                     {% autoescape off %} {{article.article|truncatewords:42 }} {% endautoescape %}
                 </div>
                 <div class="footer-article">
@@ -28,32 +32,32 @@
                     </div>
                 </div>
             {% endfor %}
+    <div class="pagination">
+        {% if is_paginated %}
+        <span class="page-links">
+            {% if page_obj.has_previous %}
+                <a class="previous-page" href="/?page={{ page_obj.previous_page_number }}"><i class="fas fa-chevron-left"></i></a>
+            {% endif %}
+                {% for i in paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <a class="active-page" >{{ i }}</a>
+                    {% else %}
+                        <a class="page" href="?page={{ i }}">{{ i }}</a>
+                    {% endif %}
+                {% endfor %}
+            {% if page_obj.has_next %}
+                <a class="next-page" href="/?page={{ page_obj.next_page_number }}"><i class="fas fa-chevron-right"></i></a>
+        </span>
+        {% endif %}
+    </div>
+    {% endif %}
     </div>
     <div class="aside-right">
         {% for tag in tag_list %}
             <div class="tags-title">
-                <i class="fas fa-tags"></i> <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> {{ tag.num_times }}
+                <i class="fas fa-tags"></i> <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> <span class="num-times">{{ tag.num_times }}</span>
             </div>
         {% endfor %}
     </div>
-    {% if is_paginated %}
-    <div class="pagination" style="background-color: rgb(221, 242, 252);">
-        <span class="page-links">
-            {% if page_obj.has_previous %}
-                <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
-                {% for i in paginator.page_range %}
-                    {% if page_obj.number == i %}
-                        <span style='color:red' >{{ i }}</span>
-                    {% else %}
-                        <a href="?page={{ i }}">{{ i }}</a>
-                    {% endif %}
-                {% endfor %}
-            {% if page_obj.has_next %}
-                <a href="/?page={{ page_obj.next_page_number }}">next</a>
-            {% endif %}
-        </span>
-    </div>
-    {% endif %}
 </div>
 {% endblock content %}

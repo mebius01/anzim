@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css' %}" />
     <script src="https://kit.fontawesome.com/fcee146ba6.js" crossorigin="anonymous"></script>
     <script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
-    <title>GRPiglet Note & Article</title>
 </head>
 <body>
     <div class="header">
@@ -25,6 +24,9 @@
         </div>
     </div>
     <div class="content">
+        {% block title %}
+            {{title}}
+        {% endblock title %}
         {% block content %}
             {{content}}
         {% endblock content %}

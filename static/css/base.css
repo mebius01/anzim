@@ -99,7 +99,6 @@ hr{
     color: gray;
     background-color: var(--BackColor);
 }
-
 .aside-left {
     padding-right: 12px;
     grid-area: aside-left;
@@ -144,15 +143,47 @@ h2 .article-title{
     background-color: var(--BackColor);
 }
 .date{
-    color: grey;
+    color: #808080;
     position: absolute;
     right: 10px;
     top: 10px;
     /* float: right; */
 }
+.pagination {
+    justify-self: center;
+    /* background-color: bisque; */
+    grid-area: paginator;
+    display: inline-block;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.pagination a {
+    border: 1px solid #EAF1F4;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    margin-left: 10px;
+    border-radius: 5px;
+    color: gray;
+}
+.pagination a.active-page{
+    /* background: #4A5E69; */
+    background-color: var(--BackColor);
+}
+.pagination a:hover{
+    /* background: #4A5E69; */
+    background-color: var(--BackColor);
+}
 .aside-right {
     padding-left: 12px;
     grid-area: aside-right;
+}
+.num-times {
+    border: 1px solid;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    background-color: var(--BackColor);
 }
 footer {
     grid-area: footer;
