@@ -1,0 +1,7 @@
+<div class="aside-left">
+    {% for article in title_list %}
+        <div class="article-menu">
+                <a href="/{{ article.get_absolute_url }}">{{article.title}}</a>
+        </div>
+    {% endfor %}
+</div>

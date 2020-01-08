@@ -1,0 +1,7 @@
+<div class="aside-right">
+    {% for tag in tag_list %}
+        <div class="tags-title">
+            <i class="fas fa-tags"></i> <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> <span class="num-times">{{ tag.num_times }}</span>
+        </div>
+    {% endfor %}
+</div>
