@@ -161,8 +161,8 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 CKEDITOR_UPLOAD_PATH =  os.path.join(BASE_DIR, 'uploads')
-STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.environ.get('STATIC_ROOT')
+MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 
