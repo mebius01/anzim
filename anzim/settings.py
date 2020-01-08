@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 # ALLOWED_HOSTS = list(os.environ.get('ALLOWED_HOSTS', default=[]))
-ALLOWED_HOSTS = ['8th-port.xyz', 'www.8th-port.xyz']
+ALLOWED_HOSTS = ['*']
 
 SECURE_HSTS_SECONDS = os.environ.get('SECURE_HSTS_SECONDS', default=False)
 SECURE_HSTS_PRELOAD = os.environ.get('SECURE_HSTS_PRELOAD', default=False)
