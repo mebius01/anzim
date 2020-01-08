@@ -118,7 +118,12 @@ hr{
 h2 .article-title{
     color: rgb(80, 80, 80);
     font-weight: 900;
-    border-bottom: 1px solid;
+    /* border-bottom: 1px solid; */
+    padding-bottom: 6px;
+}
+h1 {
+    color: rgb(80, 80, 80);
+    font-weight: 900;
     padding-bottom: 6px;
 }
 .article {
@@ -127,6 +132,9 @@ h2 .article-title{
     margin-bottom: 150px;
     /* border: 1px solid; */
 
+}
+.body-article {
+    /* border-bottom: 1px solid; */
 }
 .footer-article{
     margin: 20px 0px 40px 0;

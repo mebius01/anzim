@@ -1,21 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block title %}
+    <title>Об этом блоге</title>
+{% endblock title %}
+
 {% block content %}
-    <div class="aside-left">
-        <hr>
-        {% for article in title_list %}
-            <a href="{{ article.get_absolute_url }}">{{article.title}}</a>
-            <hr>
-        {% endfor %}
-    </div>
+{% include 'blog/include_aside_left.html' %}
     <div class="article">
-        Об этом блоге
+        <h1>Об этом блоге</h1>
+        <div class="body-article">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates earum iure dolorum quas voluptate autem, dicta debitis exercitationem maxime aut fugiat tenetur quasi repellat illo ad libero laboriosam nam facere!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae iure accusamus unde officiis minima tenetur alias, earum id hic saepe delectus aliquid vel, quibusdam explicabo aspernatur quia facilis necessitatibus qui.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi minima corrupti deserunt distinctio commodi quos vitae aliquam, veniam enim ab est numquam quia odio illo quaerat, veritatis fuga officiis debitis?Optio sapiente neque porro unde ullam magni blanditiis a minima quia culpa. At voluptatibus nisi quod quis, officiis quisquam, doloribus blanditiis magni ducimus impedit numquam soluta tempore, deserunt voluptates iusto!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ea velit veniam tempore at cum unde ratione neque dicta earum perferendis sint itaque molestias debitis, sapiente esse obcaecati, enim quasi.
+            Voluptates explicabo deleniti distinctio soluta eveniet suscipit reprehenderit similique, dolor, expedita odit quia iste provident facilis nulla. Necessitatibus expedita repellat totam beatae animi voluptatibus natus, earum ullam, perferendis molestiae ratione!
+            Esse, molestiae natus! Voluptates, quae. Voluptatem, cum enim. Officiis sit quas sequi exercitationem, iste tempora corrupti quibusdam numquam, ad sed et ex deserunt nihil aliquid obcaecati cum consequuntur! Eum, facilis.
+            Explicabo obcaecati voluptates nostrum alias nemo. Temporibus illum fugit assumenda sequi tempore nisi, id quisquam accusantium veritatis perspiciatis non inventore repellendus itaque dolores maiores rem soluta sint velit aliquam. Quis.
+            Odio consequatur laborum praesentium assumenda saepe at animi quo, nihil explicabo voluptatibus libero tempore provident commodi doloremque ipsam non. Sequi maxime dolore voluptatibus omnis optio. Quasi nemo beatae quidem aliquid!
+            Neque sint earum nisi assumenda omnis minus, distinctio dolorem adipisci ut, officiis similique quaerat repellendus voluptatum, commodi recusandae ea expedita architecto repudiandae. Similique voluptates fugit, expedita placeat mollitia error quidem.
+        </div>
     </div>
-    <div class="aside-right">
-        <hr>
-        {% for tag in tags %}
-            <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> {{ tag.num_times }}
-            <hr>
-        {% endfor %}
-    </div>
+{% include 'blog/include_aside_right.html' %}
 {% endblock content %}

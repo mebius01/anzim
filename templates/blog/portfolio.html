@@ -1,21 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
+
+{% block title %}
+    <title>Портфол</title>
+{% endblock title %}
+
 {% block content %}
-    <div class="aside-left">
-        <hr>
-        {% for article in title_list %}
-            <a href="{{ article.get_absolute_url }}">{{article.title}}</a>
-            <hr>
-        {% endfor %}
-    </div>
+{% include 'blog/include_aside_left.html' %}
     <div class="article">
-        Портфолио
+        <h1>Портфолио</h1>
+        <div class="body-article">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis qui, corporis hic consequatur fuga molestiae non facere officiis, laborum architecto optio similique? Iure voluptates, omnis quod assumenda voluptate odio illo?
+            Omnis, quisquam voluptates sit veritatis amet deserunt modi obcaecati culpa unde eligendi, perspiciatis tempore? Quam saepe a ratione aperiam vel labore nostrum iure autem distinctio assumenda obcaecati, totam nisi voluptatibus!
+            Repellendus magnam ut rem, natus vel a voluptatibus, aspernatur, praesentium quia incidunt voluptates quas voluptate vero architecto harum ex? Dignissimos, fugit illo aperiam minus dolorum sequi doloremque cupiditate facere expedita.
+            Aspernatur laborum iure error, perspiciatis, ex quod corporis eveniet dicta perferendis minima veniam vero nobis nihil consequuntur dolor quas magni saepe incidunt maxime eligendi quasi facilis? Ducimus ipsa sunt suscipit!
+            Ex sunt repudiandae inventore impedit fugiat, mollitia corporis molestias fuga officia minima adipisci aperiam. Dolorem adipisci, vero quos nobis temporibus non aspernatur reiciendis possimus illo, veritatis iste, error eos mollitia!
+            Possimus nihil numquam molestiae nobis pariatur assumenda ad maiores. Exercitationem non iure ducimus assumenda voluptatibus voluptatum possimus delectus vero optio! Maiores, beatae? Repudiandae dolore, labore reiciendis voluptas nisi eaque est.
+        </div>
     </div>
-    <div class="aside-right">
-        <hr>
-        {% for tag in tags %}
-            <a href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> {{ tag.num_times }}
-            <hr>
-        {% endfor %}
-    </div>
+{% include 'blog/include_aside_right.html' %}
 {% endblock content %}

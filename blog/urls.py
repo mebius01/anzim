@@ -17,14 +17,17 @@ from django.contrib.auth import views
 from django.contrib import admin
 from django.urls import include, path
 from blog.views import *
+from django.views.generic import ListView, DetailView, TemplateView
 
 app_name = 'blog'
 
 urlpatterns = [
     path('', ArticleListView.as_view(), name='blog_list'),
-    path('about/', About.as_view(), name='about'),
-    path('portfolio/', Portfolio.as_view(), name='portfolio'),
-    path('<slug:slug>/', ArticleDetailView.as_view(), name='article_detail'),
+    path('about/', TemplateView.as_view(template_name = "blog/about.html"), name='about'),
+    path('portfolio/', TemplateView.as_view(template_name = "blog/portfolio.html"), name='portfolio'),
+    path('<slug:slug>/', DetailView.as_view(
+        model = Article,
+        template_name = "blog/blog_detail.html"), name='article_detail'),
     path('tags/<slug:slug>/', TagView.as_view(), name='tag_detail'),
     path('api/v1/articles/', ArticleList.as_view(), name='api_home'),
     path('api/v1/<int:pk>/', ArticleDetail.as_view(), name='id_post'),

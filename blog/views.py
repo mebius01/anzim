@@ -27,7 +27,7 @@ class TagMixin(object):
 class ArticleListView(TagMixin, ListView):
     model = Article
     template_name = "blog/blog.html"
-    paginate_by = 2
+    paginate_by = 6
     def get_queryset(self):
         query = self.request.GET.get('q')
         if query:
@@ -38,25 +38,9 @@ class ArticleListView(TagMixin, ListView):
             object_list = self.model.objects.all().order_by('-publish')
         return object_list
 
-# Ограничения доступа
-        # if self.request.user.is_anonymous:
-        #     return object_list.filter(status='public')
-        # else:
-        #     return object_list
-
 class TagView(TagMixin, ListView):
     model =Article
     template_name = 'blog/blog.html'
     def get_queryset(self):
         return Article.objects.filter(tags__slug = self.kwargs.get('slug'))
-
-class ArticleDetailView(DetailView):
-    model = Article
-    template_name = "blog/blog_detail.html"
-
-class About(TemplateView):
-    template_name = "blog/about.html"
-
-class Portfolio(TemplateView):
-    template_name = "blog/portfolio.html"
 
