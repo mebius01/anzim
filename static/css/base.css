@@ -195,4 +195,5 @@ h1 {
 }
 footer {
     grid-area: footer;
+    background-color: var(--BackColor);
 }
