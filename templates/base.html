@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles/default.css' %}" />
     <script src="https://kit.fontawesome.com/fcee146ba6.js" crossorigin="anonymous"></script>
     <script src="{% static 'ckeditor/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js' %}"></script>
+    {% block title %}
+        {{title}}
+    {% endblock title %}
 </head>
 <body>
     <div class="header">
@@ -24,20 +27,12 @@
         </div>
     </div>
     <div class="content">
-        {% block title %}
-            {{title}}
-        {% endblock title %}
         {% block content %}
             {{content}}
         {% endblock content %}
     </div>
     <footer>
-        <div class="contact">
-            contact
-        </div>
-        <div class="c">
-            Copyright © 2020
-        </div>
+        <span>© 2019-2020 • Веб-разработка • Django • HTML • CSS • Vue.js • Debian</span>
     </footer>
     <script>hljs.initHighlightingOnLoad();</script>
 </body>
