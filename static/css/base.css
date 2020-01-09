@@ -49,19 +49,29 @@ hr{
 .header {
     grid-area: header;
     display: grid;
-    grid-template-columns: 5% 5% 5% auto;
+    grid-template-columns: 5% 15% auto;
+    grid-template-areas: "logo nav search";
     position: relative;
 }
 .logo {
+    grid-area: logo;
     width: 60px;
 	height: 60px;
     background-color: var(--BackColor);
 	-moz-border-radius: 50px;
 	-webkit-border-radius: 50px;
     border-radius: 50px;
+    border: 1px solid gray;
     text-align: center;
     padding: 0;
     position: relative;
+}
+.logo:hover {
+    background-color: grey;
+    /* border: none; */
+}
+.eight:hover {
+    color: white;
 }
 .eight {
     position: absolute;
@@ -71,9 +81,22 @@ hr{
     left: 6px;
     top: 10px;
 }
+.about {
+    grid-area: about;
+    margin-right: 12px;
+}
+
+.portfolio{
+    grid-area: portfolio;
+}
+.nav {
+    grid-area: nav;
+    /* border: 1px solid; */
+    margin: auto;
+
+}
 .portfolio, .about{
     color: gray;
-    margin: auto;
     font-family: 'Courier Prime', monospace;
     border: 1px solid;
     padding: 4px;
@@ -81,8 +104,13 @@ hr{
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
+.portfolio:hover, .about:hover{
+    background-color: grey;
+    color: white;
+    border: 1px solid gray;
+}
 .search {
-    /* border: 1px solid; */
+    grid-area: search;
     position: absolute;
     right: 130px;
     top: 16px;
@@ -112,6 +140,16 @@ hr{
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
+}
+.article-menu:hover{
+    background-color: gray;
+}
+.article-menu a{
+    display: block;
+}
+.article-menu a:hover{
+    color: white;
+    background-color: gray;
 }
 h2 .article-title{
     color: rgb(80, 80, 80);
