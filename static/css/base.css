@@ -28,7 +28,27 @@ a {
     text-decoration: none;
     font-weight: 600;
 }
-
+.cool_link {
+    position: relative;
+	color: gray;
+	cursor: pointer;
+	line-height: 1; /*задаём высоту строки*/
+	text-decoration: none; /*убираем подчёркивание*/
+}
+.cool_link:after {
+	display: block;
+    position: absolute;
+    margin-top: 3px;
+	left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+	width: 0;/*задаём длинну линии до наведения курсора*/
+	height: 2px; /*задаём ширину линии*/
+	background-color: gray;
+	content: "";
+	transition: width 0.2s ease-out; /*задаём время анимации*/
+}
+.cool_link:hover:after, .cool_link a:focus:after {
+	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
+}
 hr{
     align: center;
     width: 100%;
@@ -93,7 +113,6 @@ hr{
     grid-area: nav;
     /* border: 1px solid; */
     margin: auto;
-
 }
 .portfolio, .about{
     color: gray;
@@ -136,7 +155,6 @@ hr{
 }
 .article-menu {
     border: 1px solid;
-    padding: 4px;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -145,11 +163,12 @@ hr{
     background-color: gray;
 }
 .article-menu a{
+    margin: 5px;
     display: block;
 }
 .article-menu a:hover{
     color: white;
-    background-color: gray;
+    /* background-color: gray; */
 }
 h2 .article-title{
     color: rgb(80, 80, 80);
@@ -167,7 +186,6 @@ h1 {
     grid-area: article;
     margin-bottom: 150px;
     /* border: 1px solid; */
-
 }
 /* .body-article {
     border-bottom: 1px solid;
@@ -185,6 +203,12 @@ h1 {
     padding: 5px;
     color: gray;
     background-color: var(--BackColor);
+}
+
+.tag:hover{
+    background-color: grey;
+    color: white;
+    border: 1px solid gray;
 }
 .date{
     color: #808080;
