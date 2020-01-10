@@ -154,21 +154,16 @@ hr{
     color: gray;
 }
 .article-menu {
+    display: block;
+    padding: 5px;
     border: 1px solid;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
 .article-menu:hover{
-    background-color: gray;
-}
-.article-menu a{
-    margin: 5px;
-    display: block;
-}
-.article-menu a:hover{
     color: white;
-    /* background-color: gray; */
+    background-color: gray;
 }
 h2 .article-title{
     color: rgb(80, 80, 80);
