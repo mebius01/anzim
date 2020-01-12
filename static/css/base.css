@@ -182,14 +182,13 @@ h1 {
     padding: 0 12px 0 12px;
     grid-area: article;
     margin-bottom: 150px;
-    /* border: 1px solid; */
 }
-/* .body-article {
-    border-bottom: 1px solid;
-} */
-.footer-article{
-    margin: 20px 0px 40px 0;
+.aricle-1{
     /* border: 1px solid; */
+    margin-bottom: 50px;
+}
+.footer-article{
+    margin-top: 20px;
     position: relative;
 }
 .tags-title .tag {

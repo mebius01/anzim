@@ -9,20 +9,22 @@
     {% include 'blog/include_aside_left.html' %}
     <div class="article">
         {% for article in object_list %}
-            <h2>
-                <a class="article-title" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
-            </h2>
-            <div class="body-article">
-                {{article.article|truncatewords_html:28|safe}}
-            </div>
-            <div class="footer-article">
-                <div class="tags-title"><i class="fas fa-tags"></i>
-                    {% for item in article.tags.get_queryset %}
-                        <a class="tag" href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
-                    {% endfor %}
+            <div class="aricle-1">
+                <h2>
+                    <a class="article-title" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
+                </h2>
+                <div class="body-article">
+                    {{article.article|truncatewords_html:28|safe}}
                 </div>
-                <div class="date">
-                    <i class="fas fa-calendar-week"></i> {{article.updated|date:"d M Y"}}
+                <div class="footer-article">
+                    <div class="tags-title"><i class="fas fa-tags"></i>
+                        {% for item in article.tags.get_queryset %}
+                            <a class="tag" href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="date">
+                        <i class="fas fa-calendar-week"></i> {{article.updated|date:"d M Y"}}
+                    </div>
                 </div>
             </div>
         {% endfor %}
