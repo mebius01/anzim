@@ -256,3 +256,27 @@ footer {
     font-size: 10px;
     background-color: var(--BackColor);
 }
+@media (min-width:320px) and (max-width:420px){
+    pre code{
+        width: 320px;
+        overflow-x: scroll;
+        border: solid 1px;
+        background: #ccc;
+    }
+}
+@media (min-width:620px) and (max-width:820px){
+    pre code{
+        width: 620px;
+        overflow-x: scroll;
+        border: solid 1px;
+        background: #ccc;
+    }
+}
+@media (min-width: 420px) and (max-width:620px){
+    pre code{
+        width: 420px;
+        overflow-x: scroll;
+        border: solid 1px;
+        background: #ccc;
+    }
+}
