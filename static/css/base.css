@@ -198,14 +198,15 @@ h1 {
     -webkit-border-radius: 10px;
     padding: 5px;
     color: gray;
-    background-color: var(--BackColor);
+    /* color: #627fff; */
+    /* background-color: var(--BackColor); */
 }
 
-.tag:hover{
+/* .tag:hover{
     background-color: grey;
     color: white;
     border: 1px solid gray;
-}
+} */
 .date{
     color: #808080;
     position: absolute;
