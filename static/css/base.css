@@ -60,19 +60,14 @@ hr{
     grid-template-areas: "aside-left" "aside-right" "article";
     margin: 5px;
 }
-@media (min-width: 1200px){
-    .content {
-        display: grid;
-        grid-template-columns: 20% auto 20%;
-        grid-template-areas: "aside-left article aside-right";
-    }
-}
+
 .header {
     margin: 5px;
     grid-area: header;
     display: grid;
-    grid-template-columns: 5% 15% auto;
-    grid-template-areas: "logo nav search";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "logo nav" "search search";
     position: relative;
 }
 .logo {
@@ -132,9 +127,8 @@ hr{
 }
 .search {
     grid-area: search;
-    position: absolute;
-    right: 130px;
-    top: 16px;
+    margin: auto;
+    width: 100%;
 }
 .search input{
     outline:none;
@@ -144,7 +138,7 @@ hr{
     -webkit-border-radius: 10px;
     padding: 5px;
     color: gray;
-    /* background-color: var(--BackColor); */
+    width: calc(100% - 22px);
 }
 .aside-left {
     padding-right: 12px;
@@ -259,17 +253,19 @@ footer {
 }
 
 pre {
-	width: 100%;
+	/* width: 100%;
 	padding: 0;
-	margin: 0;
+	margin: 0; */
+  /* width: calc(100vw - 40px); */
 	overflow: auto;
-	overflow-y: hidden;
+    overflow-x: scroll;
 	font-size: 12px;
 	line-height: 20px;
+    border-left: 3px #808B96 solid;
+    border-top: 1px #808B96 solid;
+    border-bottom: 1px #808B96 solid;
 }
 pre code {
-    background: #3a3a3a;
-    border: 1px solid;
 	padding: 5px;
 }
 h2 a{

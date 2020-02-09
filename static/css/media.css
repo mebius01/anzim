@@ -1,0 +1,31 @@
+@media (min-width: 1200px){
+    .content {
+        display: grid;
+        grid-template-columns: 20% auto 20%;
+        grid-template-areas: "aside-left article aside-right";
+    }
+    .header {
+        margin: 5px;
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 5% 15% auto;
+        grid-template-areas: "logo nav search";
+        position: relative;
+    }
+    pre{
+        width: calc(100vw - 45vw);
+    }
+
+}
+@media (min-width: 320px){
+    .search {
+        margin: auto;
+        width: 100%;
+    }
+    .search input{
+        width: calc(100% - 22px);
+    }
+    pre {
+        width: calc(100% - 22px);
+    }
+}
