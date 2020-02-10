@@ -15,17 +15,12 @@
 */
 @media only screen and (min-width: 1281px) and (max-width: 1920px) {
     .content {
-        display: grid;
         grid-template-columns: 20% auto 20%;
         grid-template-areas: "aside-left article aside-right";
     }
     .header {
-        margin: 5px;
-        grid-area: header;
-        display: grid;
         grid-template-columns: 5% 15% auto;
         grid-template-areas: "logo nav search";
-        /* position: relative; */
     }
     pre{
         width: calc(100vw - 45vw);
@@ -33,17 +28,12 @@
 }
 @media only screen and (min-width: 1081px) and (max-width: 1280px) {
     .content {
-        display: grid;
         grid-template-columns: 25% auto 25%;
         grid-template-areas: "aside-left article aside-right";
     }
     .header {
-        margin: 5px;
-        grid-area: header;
-        display: grid;
         grid-template-columns: 5% 20% auto;
         grid-template-areas: "logo nav search";
-        /* position: relative; */
     }
     pre{
         width: calc(100vw - 50vw);
@@ -51,17 +41,12 @@
 }
 @media only screen and (min-width: 981px) and (max-width: 1080px) {
     .content {
-        display: grid;
         grid-template-columns: auto auto;
         grid-template-areas: "aside-left aside-right" "article article";
     }
     .header {
-        margin: 5px;
-        grid-area: header;
-        display: grid;
         grid-template-columns: 5% 30% auto;
         grid-template-areas: "logo nav search";
-        /* position: relative; */
     }
     pre{
         width: calc(100vw - 50vw);
@@ -69,20 +54,25 @@
 }
 @media only screen and (min-width: 601px) and (max-width: 980px) {
     .content {
-        display: grid;
         grid-template-columns: auto auto;
         grid-template-areas: "aside-left aside-right" "article article";
     }
     .header {
-        margin: 5px;
-        grid-area: header;
-        display: grid;
         grid-template-columns: 5% 40% auto;
         grid-template-areas: "logo nav search";
-        /* position: relative; */
     }
     pre{
         width: 80vw;
+    }
+    .tags-title div{
+        display: grid;
+        gap: 3px;
+        grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+        justify-items: auto;
+        /* grid-template-rows: repeat(auto-fit, minmax(auto, auto)); */
+    }
+    .date {
+        position: unset;
     }
 }
 @media (min-width: 320px){
