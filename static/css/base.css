@@ -22,7 +22,9 @@ body {
         "footer";
     gap: 20px;
 }
-
+strong {
+    font-weight: bold;
+}
 a {
     color: gray;
     text-decoration: none;
