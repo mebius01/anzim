@@ -23,6 +23,7 @@ body {
     gap: 20px;
 }
 strong {
+    font-style: normal;
     font-weight: bold;
 }
 a {
