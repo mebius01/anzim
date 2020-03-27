@@ -185,9 +185,11 @@ h1 {
     margin-bottom: 50px;
 }
 .footer-article{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 12px;
-    margin-top: 20px;
-    position: relative;
+    padding: 20px 12px 0 12px;
 }
 .tags-title .tag {
     margin: 5px;
@@ -197,10 +199,6 @@ h1 {
 .date{
     color: #808080;
     float: right;
-    /* position: absolute;
-    right: 10px;
-    top: 10px; */
-    /* float: right; */
 }
 .pagination {
     justify-self: center;
