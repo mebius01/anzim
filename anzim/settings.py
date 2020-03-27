@@ -152,7 +152,6 @@ CKEDITOR_CONFIGS = {
         'skin': 'moono',
         # https://github.com/django-ckeditor/django-ckeditor/tree/master/ckeditor/static/ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles
         # https://github.com/isagalaev/highlight.js/tree/master/src/styles
-        'codesnippet_theme': 'monokai',
         # uncomment to restrict only those languages
         # 'codeSnippet_languages': {
         #     'python': 'Python Guru',
