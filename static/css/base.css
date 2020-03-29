@@ -53,7 +53,7 @@ a {
 	width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
 }
 hr{
-    align: center;
+    text-align: center;
     width: 100%;
     size: 1;
 }
@@ -111,7 +111,6 @@ hr{
 }
 .nav {
     grid-area: nav;
-    /* border: 1px solid; */
     margin: auto;
 }
 .portfolio, .about{
@@ -195,7 +194,6 @@ h1 {
     margin: 5px;
     color: gray;
 }
-
 .date{
     color: #808080;
     float: right;
@@ -244,7 +242,6 @@ footer {
     background-color: var(--BackColor);
 }
 
-
 h2 a{
     color: #505050;
     font-weight: 800;
@@ -276,16 +273,21 @@ strong{
     user-select: none;
 }
 
-code {
+/* code {
     white-space: pre-wrap;
     overflow: auto;
-}
+} */
 pre {
 	overflow: auto;
     overflow-x: scroll;
     white-space: pre-line;
+    white-space: pre-wrap;       
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
     word-wrap: break-word;
 }
+
 
 
 
