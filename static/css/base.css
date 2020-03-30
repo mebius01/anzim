@@ -273,23 +273,11 @@ strong{
     user-select: none;
 }
 
-/* code {
-    white-space: pre-wrap;
-    overflow: auto;
-} */
 pre {
-	overflow: auto;
-    overflow-x: scroll;
-    white-space: pre-line;
-    white-space: pre-wrap;       
-    white-space: -moz-pre-wrap;
-    white-space: -pre-wrap;
-    white-space: -o-pre-wrap;
-    word-wrap: break-word;
+	width:  calc(100vw - 40vw);
+	overflow-x: auto;
+	overflow-y: hidden;
 }
-
-
-
 
 /* 
 @media only screen and (min-width: 1601px) and (max-width: 1920px){}
@@ -315,9 +303,9 @@ pre {
         grid-template-columns: 5% 15% auto;
         grid-template-areas: "logo nav search";
     }
-    /* pre{
-        width: calc(100vw - 45vw);
-    } */
+    pre{
+        width: calc(100vw - 40vw);
+    }
 }
 @media (min-width: 1081px) and (max-width: 1280px) {
     .content{
@@ -328,9 +316,9 @@ pre {
         grid-template-columns: 5% 20% auto;
         grid-template-areas: "logo nav search";
     }
-    /* pre{
+    pre{
         width: calc(100vw - 50vw);
-    } */
+    }
 }
 @media (min-width: 981px) and (max-width: 1080px) {
     .content{
@@ -340,6 +328,9 @@ pre {
     .header{
         grid-template-columns: 5% 30% auto;
         grid-template-areas: "logo nav search";
+    }
+    pre{
+        width: 90vw;
     }
 }
 @media (min-width: 600px) and (max-width: 980px) {
@@ -351,6 +342,9 @@ pre {
         grid-template-columns: 5% 40% auto;
         grid-template-areas: "logo nav search";
     }
+    pre{
+        width: 90vw;
+    }
 }
 @media (min-width: 400px) and (max-width: 599px) {
     .content{
@@ -361,4 +355,17 @@ pre {
         grid-template-columns: auto auto;
         grid-template-areas: "logo nav" "search";
     }
+    pre{
+        width: 90vw;
+    }
 }
+
+/* pre code{
+    white-space: pre;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+ } */
