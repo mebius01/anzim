@@ -146,29 +146,6 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.profiling.ProfilingPanel',
 ]
 
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
-CKEDITOR_CONFIGS = {
-    'default': {
-        'skin': 'moono',
-        # https://github.com/django-ckeditor/django-ckeditor/tree/master/ckeditor/static/ckeditor/ckeditor/plugins/codesnippet/lib/highlight/styles
-        # https://github.com/isagalaev/highlight.js/tree/master/src/styles
-        # uncomment to restrict only those languages
-        # 'codeSnippet_languages': {
-        #     'python': 'Python Guru',
-        #     'javascript': 'JavaScript Fu',
-        #     'php': 'PHP Ninja',
-        #     'c': 'You custom funny language name'
-        # },
-        'toolbar': 'MyCustomToolbar',
-        'extraPlugins': ','.join(
-            [
-                # add the follow plugins
-                'codesnippet',
-                'widget',
-                'dialog',
-            ]),
-    }
-}
 SITE_ID = 1
 AUTHENTICATION_BACKENDS = (
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -198,6 +175,69 @@ EMAIL_PORT = config("EMAIL_PORT")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True)
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+# CKEDITOR_CONFIGS = {
+#     'default': {
+#         'skin': 'moono',
+#         # uncomment to restrict only those languages
+#         # 'codeSnippet_languages': {
+#         #     'python': 'Python Guru',
+#         #     'javascript': 'JavaScript Fu',
+#         #     'php': 'PHP Ninja',
+#         #     'c': 'You custom funny language name'
+#         # },
+#         'toolbar': 'MyCustomToolbar',
+#         'extraPlugins': ','.join(
+#             [
+#                 # add the follow plugins
+#                 'codesnippet',
+#                 'widget',
+#                 'dialog',
+#             ]),
+#     }
+# }
+
+# CKEDITOR_CONFIGS = {
+#    'default': {
+#         'toolbar':[ ['CodeSnippet', ], ],
+#         'height': 400,
+#         'width': 900,
+#         'removePlugins': 'stylesheetparser',
+#         'extraPlugins': 'codesnippet',
+#    },
+# }
+
+CKEDITOR_CONFIGS = {
+    # https://vivazzi.pro/it/ckeditor-config/
+    'default': {
+        'toolbar': [
+            [
+            '-', 'Source',
+            'Undo', 'Redo',
+            '-', 'Bold', 'Italic', 'Underline',
+            '-', 'Link', 'Unlink', 'Anchor',
+            '-', 'Format', 'FontSize',
+            '-', 'Maximize',
+            '-', 'Table',
+            '-', 'Image',
+            '-', 'NumberedList', 'BulletedList'
+            ],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock',
+            '-', 'TextColor',
+            '-', 'Outdent', 'Indent',
+            '-', 'HorizontalRule',
+            '-', 'Blockquote'
+            ],
+            ['CodeSnippet', ],
+        ],
+        'extraPlugins': 'codesnippet',
+        'height': 500,
+        'width': '100%',
+        'toolbarCanCollapse': False,
+        'forcePasteAsPlainText': True,
+    }
+}
 
 
 # CKEDITOR_CONFIGS = {
@@ -249,22 +289,18 @@ EMAIL_USE_TLS = config("EMAIL_USE_TLS", default=True)
 #         'extraPlugins': ','.join([
 #             'uploadimage', # the upload image feature
 #             # your extra plugins here
-#             # 'div',
-#             # 'autolink',
-#             # 'autoembed',
-#             # 'embedsemantic',
-#             # 'autogrow',
+#             'div',
+#             'autolink',
+#             'autoembed',
+#             'embedsemantic',
+#             'autogrow',
 #             # 'devtools',
-#             # 'widget',
-#             # 'lineutils',
-#             # 'clipboard',
-#             # 'dialog',
-#             # 'dialogui',
-#             # 'elementspath',
-#             'bbcode',
+#             'widget',
+#             'lineutils',
 #             'clipboard',
-#             'codesnippet',
-#             'codesnippetgeshi',
+#             'dialog',
+#             'dialogui',
+#             'elementspath'
 #         ]),
 #     }
 # }
