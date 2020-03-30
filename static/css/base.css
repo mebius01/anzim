@@ -330,7 +330,7 @@ pre {
         grid-template-areas: "logo nav search";
     }
     pre{
-        width: 90vw;
+        width: 98vw;
     }
 }
 @media (min-width: 600px) and (max-width: 980px) {
@@ -343,7 +343,7 @@ pre {
         grid-template-areas: "logo nav search";
     }
     pre{
-        width: 90vw;
+        width: 98vw;
     }
 }
 @media (min-width: 400px) and (max-width: 599px) {
@@ -356,7 +356,7 @@ pre {
         grid-template-areas: "logo nav" "search";
     }
     pre{
-        width: 90vw;
+        width: 98vw;
     }
 }
 
