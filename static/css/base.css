@@ -277,7 +277,7 @@ strong{
     padding-left: 10px;
 }
 pre {
-	width:  98vw;
+	width:  97vw;
 	overflow-x: auto;
 	overflow-y: hidden;
 }
@@ -333,7 +333,7 @@ pre {
         grid-template-areas: "logo nav search";
     }
     pre{
-        width: 98vw;
+        width: 97vw;
     }
 }
 @media (min-width: 600px) and (max-width: 980px) {
@@ -346,7 +346,7 @@ pre {
         grid-template-areas: "logo nav search";
     }
     pre{
-        width: 98vw;
+        width: 97vw;
     }
 }
 @media (min-width: 400px) and (max-width: 599px) {
@@ -359,7 +359,7 @@ pre {
         grid-template-areas: "logo nav" "search";
     }
     pre{
-        width: 98vw;
+        width: 97vw;
     }
 }
 
