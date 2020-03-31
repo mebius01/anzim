@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
 @import url('https://fonts.googleapis.com/css?family=Baloo+Tamma&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Courier+Prime:400,700&display=swap');
-html, body {
+html {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -12,7 +12,7 @@ html, body {
     --LinkCo0lor: #bdd6fd;
     --BackColor: #f5f5f5;
 }
-body {
+/* body {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -20,8 +20,7 @@ body {
         "header"
         "content"
         "footer";
-    gap: 20px;
-}
+} */
 strong {
     font-style: normal;
     font-weight: bold;
@@ -35,7 +34,7 @@ a {
     position: relative;
 	color: gray;
 	cursor: pointer;
-	line-height: 1; /*задаём высоту строки*/
+	line-height: auto;
 	text-decoration: none; /*убираем подчёркивание*/
 }
 .cool_link:after {
@@ -65,7 +64,7 @@ hr{
 }
 
 .header {
-    margin: 5px;
+    padding: 12px;
     grid-area: header;
     display: grid;
     grid-template-columns: 1fr;
@@ -88,7 +87,6 @@ hr{
 }
 .logo:hover {
     background-color: grey;
-    /* border: none; */
 }
 .eight:hover {
     color: white;
@@ -113,7 +111,7 @@ hr{
     grid-area: nav;
     margin: auto;
 }
-.portfolio, .about{
+.nav__link{
     color: gray;
     font-family: 'Courier Prime', monospace;
     border: 1px solid;
@@ -122,7 +120,7 @@ hr{
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 }
-.portfolio:hover, .about:hover{
+.nav__link:hover{
     background-color: grey;
     color: white;
     border: 1px solid gray;
@@ -143,7 +141,7 @@ hr{
     width: calc(100% - 22px);
 }
 .aside-left {
-    padding-right: 12px;
+    padding: 12px;
     grid-area: aside-left;
 }
 .link-block, .tags-title {
@@ -166,7 +164,6 @@ hr{
 h2 .article-title{
     color: #505050;
     font-weight: 900;
-    /* border-bottom: 1px solid; */
     padding-bottom: 6px;
 }
 h1 {
@@ -175,12 +172,10 @@ h1 {
     padding-bottom: 6px;
 }
 .article {
-    padding: 0 12px 0 12px;
+    padding: 12px;
     grid-area: article;
-    margin-bottom: 150px;
 }
 .aricle-1{
-    /* border: 1px solid; */
     margin-bottom: 50px;
 }
 .footer-article{
@@ -188,7 +183,7 @@ h1 {
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    padding: 20px 12px 0 12px;
+    padding: 0px 12px 0 12px;
 }
 .tags-title .tag {
     margin: 5px;
@@ -200,7 +195,6 @@ h1 {
 }
 .pagination {
     justify-self: center;
-    /* background-color: bisque; */
     grid-area: paginator;
     display: inline-block;
     margin-top: 40px;
@@ -217,15 +211,13 @@ h1 {
     color: gray;
 }
 .pagination a.active-page{
-    /* background: #4A5E69; */
     background-color: var(--BackColor);
 }
 .pagination a:hover{
-    /* background: #4A5E69; */
     background-color: var(--BackColor);
 }
 .aside-right {
-    padding-left: 12px;
+    padding: 12px;
     grid-area: aside-right;
 }
 .num-times {
@@ -235,14 +227,14 @@ h1 {
     background-color: var(--BackColor);
 }
 .footer {
+    grid-area: footer;
     display: flex;
     justify-content: space-between;
-    margin: 5px;
-    grid-area: footer;
-    padding: 20px 20px 20px 20px;
+    align-items: center;
+    padding: 20px;
     font-size: 10px;
+    color: gray;
     background-color: var(--BackColor);
-    color: grey;
 }
 
 h2 a{
@@ -275,17 +267,14 @@ strong{
     -ms-user-select: none;
     user-select: none;
 }
-/* for block of code */
-.hljs-ln-code {
-    padding-left: 10px;
-}
+
 pre {
-	width:  97vw;
+	width: 95vw;
 	overflow-x: auto;
 	overflow-y: hidden;
 }
 
-/*
+/* 
 @media only screen and (min-width: 1601px) and (max-width: 1920px){}
 @media only screen and (min-width: 1361px) and (max-width: 1600px) {}
 @media only screen and (min-width: 1281px) and (max-width: 1360px) {}
@@ -310,7 +299,7 @@ pre {
         grid-template-areas: "logo nav search";
     }
     pre{
-        width: calc(100vw - 40vw);
+        width: calc(100vw - 45vw);
     }
 }
 @media (min-width: 1081px) and (max-width: 1280px) {
@@ -336,7 +325,7 @@ pre {
         grid-template-areas: "logo nav search";
     }
     pre{
-        width: 97vw;
+        width: 95vw;
     }
 }
 @media (min-width: 600px) and (max-width: 980px) {
@@ -349,7 +338,7 @@ pre {
         grid-template-areas: "logo nav search";
     }
     pre{
-        width: 97vw;
+        width: 95vw;
     }
 }
 @media (min-width: 400px) and (max-width: 599px) {
@@ -361,8 +350,9 @@ pre {
         grid-template-columns: auto auto;
         grid-template-areas: "logo nav" "search";
     }
+    .search input {width: calc(100% + 20px);}
     pre{
-        width: 97vw;
+        width: 95vw;
     }
 }
 

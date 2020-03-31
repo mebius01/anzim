@@ -20,8 +20,8 @@
             <a href="/"><span class="eight">8-th</span></a>
         </div>
         <div class="nav">
-            <a class="about" href="{% url 'blog:about' %}">About</a>
-            <a class="portfolio" href="{% url 'blog:portfolio' %}">Portfolio</a>
+            <a class="about nav__link" href="{% url 'blog:about' %}">About</a>
+            <a class="portfolio nav__link" href="{% url 'blog:portfolio' %}">Portfolio</a>
         </div>
         <div class="search">
             <form role="search" action="{% url 'blog:blog_list' %}">
