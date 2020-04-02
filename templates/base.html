@@ -16,36 +16,52 @@
     {% endblock title %}
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <a href="/"><span class="eight">8-th</span></a>
+    <div class="container">
+        <div class="header">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item logo"><a href="/" class="nav__link"><span class="logo__eight">8-th</span></a></li>
+                    <li class="nav__item"><a href="{% url 'blog:about' %}" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="{% url 'blog:portfolio' %}" class="nav__link">Portfolio</a></li>
+                </ul>
+                <ul class="nav__list search">
+                    <li class="nav__item">
+                        <form class="search__form" role="search" action="{% url 'blog:blog_list' %}">
+                            <input type="text" placeholder="Search" name="q">
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+            <!-- <div class="logo">
+                <a href="/"><span class="eight">8-th</span></a>
+            </div>
+            <div class="nav">
+                <a class="about nav__link" href="{% url 'blog:about' %}">About</a>
+                <a class="portfolio nav__link" href="{% url 'blog:portfolio' %}">Portfolio</a>
+            </div>
+            <div class="search">
+                <form role="search" action="{% url 'blog:blog_list' %}">
+                    <input type="text" placeholder="Search" name="q">
+                </form>
+            </div> -->
         </div>
-        <div class="nav">
-            <a class="about nav__link" href="{% url 'blog:about' %}">About</a>
-            <a class="portfolio nav__link" href="{% url 'blog:portfolio' %}">Portfolio</a>
+        <div class="content">
+            {% block content %}
+                {{content}}
+            {% endblock content %}
         </div>
-        <div class="search">
-            <form role="search" action="{% url 'blog:blog_list' %}">
-                <input type="text" placeholder="Search" name="q">
-            </form>
-        </div>
+        <footer class="footer">
+            <span class="footer__link">
+                © 2019-2020 •
+                <a href="/tags/django/">Django</a> •
+                <a href="/tags/html/">HTML</a> •
+                <a href="/tags/css/">CSS</a> •
+                <a href="/tags/vue/">Vue.js</a> •
+                <a href="/tags/linux/">Linux</a>
+            </span>
+            <a class="footer__email" href="mailto:8th.port@gmail.com">8th.port@gmail.com</a>
+        </footer>
     </div>
-    <div class="content">
-        {% block content %}
-            {{content}}
-        {% endblock content %}
-    </div>
-    <footer class="footer">
-        <span class="footer__link">
-            © 2019-2020 •
-            <a href="/tags/django/">Django</a> •
-            <a href="/tags/html/">HTML</a> •
-            <a href="/tags/css/">CSS</a> •
-            <a href="/tags/vue/">Vue.js</a> •
-            <a href="/tags/linux/">Linux</a>
-        </span>
-        <a class="footer__email" href="mailto:8th.port@gmail.com">8th.port@gmail.com</a>
-    </footer>
     {% block javascript %}
     <script>
         hljs.initHighlightingOnLoad();
