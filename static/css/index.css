@@ -168,3 +168,33 @@
     background-color: #5cb85c;
     color:white;
 }
+
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.icon-block{
+    list-style: none;
+    display: flex;
+}
+.icon-block__link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 26px;
+    background-color: black;
+    height: 43px;
+    width: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+}
+.icon-block__link:hover, .btn__footer--hover:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: black;
+    border: 1px solid black;
+}
