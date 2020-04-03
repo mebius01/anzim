@@ -2,11 +2,13 @@
 .header {
     height: 65px;
     padding: 0 20px;
+    background-color: #becedb;
 }
 .nav {
     grid-area: nav;
     display: flex;
     justify-content: space-between;
+    align-content: center;
 }
 .nav__list {
     list-style: none;
@@ -197,4 +199,22 @@
     background-color: #fff;
     color: black;
     border: 1px solid black;
+}
+
+.search__form {
+    position: relative;
+}
+.search input{
+    width: 90%;
+    padding: 6px 8px 6px 8px;
+    background: #FFFFFF;
+    border: 1px solid #DADADA;
+    /* outline:none;
+    border: 1px gray solid;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    padding: 5px;
+    color: gray;
+    width: calc(100% - 22px); */
 }
