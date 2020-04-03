@@ -376,9 +376,18 @@ code {
         grid-template-areas: "aside-left" "aside-right" "article article";
     }
     .nav {
-        justify-content: space-between;
+        flex-wrap: wrap;
     }
-    .search input {width: calc(100% + 20px);}
+    .search {
+        margin-top: 20px;
+        width: 100%;
+    }
+    .header {
+        height: 120px;
+    }
+    .search input {
+        width: 90vw;
+    }
     pre{
         width: 95vw;
     }

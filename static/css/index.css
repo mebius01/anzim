@@ -74,3 +74,97 @@
     color: white;
     background-color: gray;
 }
+
+
+
+.main {
+    padding: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-template-rows: repeat(auto-fit, minmax(auto, auto));
+}
+.title-h2 {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: normal;
+}
+.card {
+    display: grid;
+    background-color: white;
+    color:  rgb(62, 62, 90);
+    height: auto;
+    max-width: 100%;
+    text-align:left;
+    box-shadow: 0 0 15px 0 rgba(0, 1, 1, 0.2);
+}
+.card:hover {
+    box-shadow: 5px 5px 25px 0 rgba(0, 1, 1, 0.3);
+}
+.card__link {
+    display:block; /* Ссылка как блочный элемент */
+    text-decoration: none;
+    color: rgb(65, 65, 112);
+}
+.card__body {
+    padding: 5px;
+}
+.card__img {
+    padding: 5px;
+}
+.card-img-top {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.card--left-right {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 3px;
+}
+.card--text-crossed  {
+    text-decoration: line-through;
+    font-size: 13px;
+    font-weight: 700;
+}
+.card--text-centr {
+    text-align: center;
+}
+.card--red-text {
+    color: rgb(252,98,91);
+    font-size: 16px;
+    font-weight: 700;
+}
+.card__price--text {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 2px 5px;
+    background-color: rgba(252, 99, 91, 0.18);
+}
+.form-quantity-buy{
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+}
+.quantity {
+    height: 31px;
+    width: 41px;
+    text-decoration: none;
+    background-color: white;
+    text-align: center;
+    border: 1px #5cb85c solid;
+    outline: none;
+}
+.apply {
+    background-color: white;
+    color: #5cb85c;
+    text-decoration: none;
+    outline: none;
+    border: 1px solid #5cb85c;
+}
+.apply:hover{
+    background-color: #5cb85c;
+    color:white;
+}
