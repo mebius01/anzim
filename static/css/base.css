@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap&subset=cyrillic,cyrillic-ext,latin-ext');
-@import url('https://fonts.googleapis.com/css?family=Baloo+Tamma&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Courier+Prime:400,700&display=swap');
 * {
     margin: 0;
     padding: 0;
-  }
+}
 html {
-    font-family: 'Montserrat', monospace;
+    font-family: 'Montserrat', sans-serif;
 }
 .content {
-    min-height: calc(100vh - 135px);
+    min-height: calc(100vh - 175px);
 }
 :root {
     --TextColor: #3a3a3a;
@@ -78,7 +75,8 @@ hr{
 } */
 .header {
     height: 65px;
-    padding: 0 20px;
+    padding: 20px 20px;
+    /* padding-top: 20px; */
 }
 .nav {
     grid-area: nav;
@@ -94,6 +92,9 @@ hr{
 .nav__link {
     display: block;
     padding: 0 15px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 20px;
+    font-weight: 700;
 }
 .logo {
     grid-area: logo;
@@ -113,7 +114,7 @@ hr{
 }
 .logo__eight {
     position: absolute;
-    font-family: 'Baloo Tamma', cursive;
+    font-family: 'Baloo Tamma 2', cursive;
     color: gray;
     font-size: 25px;
     left: 6px;
@@ -305,8 +306,13 @@ pre {
 	overflow-x: auto;
 	overflow-y: hidden;
 }
+code {
+    margin: 10px 0;
+    border-radius: 6px;
+    font-family: 'Ubuntu Mono', monospace;
+}
 
-/* 
+/*
 @media only screen and (min-width: 1601px) and (max-width: 1920px){}
 @media only screen and (min-width: 1361px) and (max-width: 1600px) {}
 @media only screen and (min-width: 1281px) and (max-width: 1360px) {}
@@ -339,10 +345,6 @@ pre {
         grid-template-columns: 25% auto 25%;
         grid-template-areas: "aside-left article aside-right";
     }
-    .header{
-        grid-template-columns: 5% 20% auto;
-        grid-template-areas: "logo nav search";
-    }
     pre{
         width: calc(100vw - 50vw);
     }
@@ -351,10 +353,6 @@ pre {
     .content{
         grid-template-columns: auto auto;
         grid-template-areas: "aside-left aside-right" "article article";
-    }
-    .header{
-        grid-template-columns: 5% 30% auto;
-        grid-template-areas: "logo nav search";
     }
     pre{
         width: 95vw;
@@ -365,9 +363,8 @@ pre {
         grid-template-columns: auto auto;
         grid-template-areas: "aside-left aside-right" "article article";
     }
-    .header{
-        grid-template-columns: 5% 40% auto;
-        grid-template-areas: "logo nav search";
+    .nav {
+        justify-content: space-between;
     }
     pre{
         width: 95vw;
@@ -377,6 +374,9 @@ pre {
     .content{
         grid-template-columns: auto;
         grid-template-areas: "aside-left" "aside-right" "article article";
+    }
+    .nav {
+        justify-content: space-between;
     }
     .search input {width: calc(100% + 20px);}
     pre{

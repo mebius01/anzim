@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'highlight/styles/monokai-sublime.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <!-- <script src="{% static 'highlight/highlight.pack.js' %}"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
     <script src="{% static 'highlight/highlightjs-line-numbers.js' %}"></script>
     <script src="https://kit.fontawesome.com/fcee146ba6.js" crossorigin="anonymous"></script>
@@ -32,18 +33,6 @@
                     </li>
                 </ul>
             </nav>
-            <!-- <div class="logo">
-                <a href="/"><span class="eight">8-th</span></a>
-            </div>
-            <div class="nav">
-                <a class="about nav__link" href="{% url 'blog:about' %}">About</a>
-                <a class="portfolio nav__link" href="{% url 'blog:portfolio' %}">Portfolio</a>
-            </div>
-            <div class="search">
-                <form role="search" action="{% url 'blog:blog_list' %}">
-                    <input type="text" placeholder="Search" name="q">
-                </form>
-            </div> -->
         </div>
         <div class="content">
             {% block content %}

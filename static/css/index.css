@@ -12,14 +12,43 @@
     list-style: none;
     display: flex;
     align-items: center;
-    border: #627fff 1px solid;
 }
 
 .nav__link {
     display: block;
     padding: 0 15px;
+    text-decoration: none;
+    color: gray;
 }
 
+
+
+.breadcrumbs {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+.breadcrumbs__item {
+    display: inline;
+}
+.breadcrumbs__item+.breadcrumbs__item:before {
+    padding: 5px;
+    color: grey;
+    content: "/\00a0";
+}
+.breadcrumbs__link {
+    color: #0275d8;
+    text-decoration: none;
+}
+.breadcrumbs__link:hover {
+    color: gray;
+    text-decoration: none;
+}
+.breadcrumbs__link--activ {
+    color: grey;
+    cursor: default;
+}
 
 
 .pagination {
