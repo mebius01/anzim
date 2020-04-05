@@ -1,6 +1,6 @@
 var scrollA = document.getElementById('scrollA');
 var scrollB = document.getElementById('scrollB');
-var heightDoc = document.documentElement.scrollHeight- document.documentElement.clientHeight;
+var heightDoc = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
 window.addEventListener('scroll', function() {
     if (document.documentElement.scrollTop > 30) {
