@@ -52,7 +52,10 @@
             <a class="footer__email" href="mailto:8th.port@gmail.com">8th.port@gmail.com</a>
         </footer>
     </div>
+    <button onclick="topFunction()" id="scrollA" title="Go to top"><i class="fas fa-chevron-up"></i></button>
+    <button onclick="downFunction()" id="scrollB" title="Go to down"><i class="fas fa-chevron-down"></i></button>
     {% block javascript %}
+    <script src="{% static 'js/main.js' %}"></script>
     <script>
         hljs.initHighlightingOnLoad();
         hljs.initLineNumbersOnLoad();

@@ -1,4 +1,6 @@
-
+.content {
+    position: relative;
+}
 .header {
     height: 65px;
     padding: 0 20px;
@@ -83,8 +85,8 @@
     padding: 20px;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
-    grid-template-rows: repeat(auto-fit, minmax(auto, auto));
+    /* grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-template-rows: repeat(auto-fit, minmax(auto, auto)); */
 }
 .title-h2 {
     font-weight: 700;
@@ -202,7 +204,7 @@
 }
 
 .search__form {
-    position: relative;
+    
 }
 .search input{
     width: 90%;
@@ -217,4 +219,38 @@
     padding: 5px;
     color: gray;
     width: calc(100% - 22px); */
+}
+#result {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+    padding: 20px 0;
+}
+#scrollA {
+    display: none;
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    right: 30px;
+    bottom: 60px;
+    background: hsla(208, 98%, 43%, 0.6);
+    color: white;
+}
+#scrollB {
+    display: none;
+    cursor: pointer;
+    border: none;
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background: hsla(0, 86%, 59%, 0.6);
+    color: white;
 }
