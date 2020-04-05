@@ -305,6 +305,12 @@ code {
         grid-template-columns: 5% 15% auto;
         grid-template-areas: "logo nav search";
     }
+    .search{
+        width: calc(100vw - 50px);
+    }
+    .search input{
+        width: calc(100vw - 62px);
+    }
     pre{
         width: calc(100vw - 45vw);
     }
@@ -313,6 +319,12 @@ code {
     .content{
         grid-template-columns: 25% auto 25%;
         grid-template-areas: "aside-left article aside-right";
+    }
+    .search{
+        width: calc(100vw - 50px);
+    }
+    .search input{
+        width: calc(100vw - 62px);
     }
     pre{
         width: calc(100vw - 50vw);
@@ -323,9 +335,12 @@ code {
         grid-template-columns: auto auto;
         grid-template-areas: "aside-left aside-right" "article article";
     }
-    /* .aside-left {
-        padding: 0 20px;
-    } */
+    .search{
+        width: calc(100vw - 50px);
+    }
+    .search input{
+        width: calc(100vw - 62px);
+    }
     .article {
         padding: 10px 0;
     }
@@ -340,6 +355,12 @@ code {
     .content{
         grid-template-columns: auto auto;
         grid-template-areas: "aside-left aside-right" "article article";
+    }
+    .search{
+        width: calc(100vw - 40px);
+    }
+    .search input{
+        width: calc(100vw - 52px);
     }
     .aside-left {
         padding: 0;
@@ -360,6 +381,12 @@ code {
         grid-template-areas: "aside-left" "aside-right" "article article";
         padding: 0;
     }
+    .search{
+        width: calc(100vw - 40px);
+    }
+    .search input{
+        width: calc(100vw - 52px);
+    }
     .aside-left {
         padding: 0 20px;
     }
@@ -378,6 +405,12 @@ code {
         grid-template-columns: auto;
         grid-template-areas: "aside-left" "aside-right" "article article";
         padding: 0;
+    }
+    .search{
+        width: calc(100vw - 40px);
+    }
+    .search input{
+        width: calc(100vw - 52px);
     }
     .aside-left {
         padding: 0 20px;
