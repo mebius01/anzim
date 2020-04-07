@@ -6,30 +6,16 @@
 {% endblock title %}
 
 {% block content %}
-{% include 'blog/include_aside_left.html' %}
-    <div class="article">
-        <h1>{{article.title}}</h1>
-        <div class="body-article">
-            {{article.article|safe }}
-        </div>
-        <hr>
-        <div class="footer-article">
-            <div class="tags-title"><i class="fas fa-tags"></i>
-                {% for item in article.tags.get_queryset %}
-                    <a class="tag" href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
-                {% endfor %}
-            </div>
-            <div class="date">
-                <i class="fas fa-calendar-week"></i> {{article.updated|date:"d M Y"}}
-            </div>
-        </div>
+{% include 'blog/aside_left.html' %}
+<main class="main">
+    {% include 'blog/article.html' %}
+</main>
+<div class="aside-right">
+    {% for article in article.tags.similar_objects %}
+    <div class="tags-title">
+        <i class="fab fa-connectdevelop"></i>
+        <a class="cool_link" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
     </div>
-    <div class="aside-right">
-        {% for article in article.tags.similar_objects %}
-        <div class="tags-title">
-            <i class="fab fa-connectdevelop"></i>
-            <a class="cool_link" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
-        </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
+</div>
 {% endblock content %}

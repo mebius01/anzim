@@ -6,47 +6,14 @@
 {% endblock title %}
 
 {% block content %}
-    {% include 'blog/include_aside_left.html' %}
-    <div class="article">
+    {% include 'blog/aside_left.html' %}
+    <main class="main">
         {% for article in object_list %}
-            <div class="aricle-1">
-                <h2>
-                    <a class="article-title" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
-                </h2>
-                <div class="body-article">
-                    {{article.article|truncatewords_html:28|safe}}
-                </div>
-                <div class="footer-article">
-                    <div class="tags-title"><i class="fas fa-tags"></i>
-                        {% for item in article.tags.get_queryset %}
-                            <a class="tag" href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
-                        {% endfor %}
-                    </div>
-                    <div class="date">
-                        <i class="fas fa-calendar-week"></i> {{article.updated|date:"d M Y"}}
-                    </div>
-                </div>
-            </div>
+            {% include 'blog/article-list.html' %}
         {% endfor %}
-        <div class="pagination">
-            {% if is_paginated %}
-            <div class="page-links">
-                {% if page_obj.has_previous %}
-                    <a class="previous-page" href="/?page={{ page_obj.previous_page_number }}"><i class="fas fa-chevron-left"></i></a>
-                {% endif %}
-                    {% for i in paginator.page_range %}
-                        {% if page_obj.number == i %}
-                            <a class="active-page" >{{ i }}</a>
-                        {% else %}
-                            <a class="page" href="?page={{ i }}">{{ i }}</a>
-                        {% endif %}
-                    {% endfor %}
-                {% if page_obj.has_next %}
-                    <a class="next-page" href="/?page={{ page_obj.next_page_number }}"><i class="fas fa-chevron-right"></i></a>
-                {% endif %}
-            </div>
-            {% endif %}
-        </div>
-    </div>
-    {% include 'blog/include_aside_right.html' %}
+        {% if is_paginated %}
+            {% include 'blog/pagination.html' %}
+        {% endif %}
+    </main>
+    {% include 'blog/aside_right.html' %}
 {% endblock content %}

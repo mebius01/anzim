@@ -21,6 +21,16 @@ a {
     text-decoration: none;
     font-weight: 600;
 }
+.title-h2 {
+    color: #505050;
+    font-weight: 900;
+    padding-bottom: 6px;
+}
+.title-h1 {
+    color: #505050;
+    font-weight: 900;
+    padding-bottom: 6px;
+}
 .cool_link {
     position: relative;
 	color: gray;
@@ -125,7 +135,7 @@ hr{
     margin-top: 20px;
     width: calc(100vw - 57px);
 }
-.search input{
+.search__input{
     width: calc(100vw - 70px);
     outline:none;
     border: 1px gray solid;
@@ -159,31 +169,21 @@ hr{
     color: white;
     background-color: gray;
 }
-h2 .article-title{
-    color: #505050;
-    font-weight: 900;
-    padding-bottom: 6px;
-}
-h1 {
-    color: #505050;
-    font-weight: 900;
-    padding-bottom: 6px;
-}
-.article {
+
+.main {
     grid-area: article;
     padding: 10px 20px;
 }
-.aricle-1{
-    margin-bottom: 50px;
+.aricle{
+    padding-bottom: 20px;
 }
-.footer-article{
+.article__footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 12px;
-    padding: 0px 12px 0 12px;
 }
-.tags-title .tag {
+.tag {
     margin: 5px;
     color: gray;
 }
@@ -249,9 +249,6 @@ h1 {
     color: grey;
     content: " \007C";
 }
-/* .footer__link {
-
-} */
 h2 a{
     color: #505050;
     font-weight: 800;

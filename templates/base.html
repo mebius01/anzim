@@ -29,7 +29,7 @@
                 <ul class="nav__list search">
                     <li class="nav__item">
                         <form class="search__form" role="search" action="{% url 'blog:blog_list' %}">
-                            <input type="text" placeholder="Search" name="q">
+                            <input class="search__input"ype="text" placeholder="Search" name="q">
                         </form>
                     </li>
                 </ul>
@@ -50,15 +50,9 @@
                 <li class="footer__item"><a href="/tags/vue/" class="footer__link">Vue.js</a></li>
                 <li class="footer__item"><a href="/tags/linux/" class="footer__link">Linux</a></li>
             </ul>
-            <!-- <span class="footer__link">
-                © 2019-2020 •
-                <a href="/tags/django/">Django</a> •
-                <a href="/tags/html/">HTML</a> •
-                <a href="/tags/css/">CSS</a> •
-                <a href="/tags/vue/">Vue.js</a> •
-                <a href="/tags/linux/">Linux</a>
-            </span> -->
-            <a class="footer__email" href="mailto:8th.port@gmail.com">8th.port@gmail.com</a>
+            <ul class="footer__list">
+                <li class="footer__item"><a href="mailto:8th.port@gmail.com" class="footer__link">8th.port@gmail.com</a></li>
+            </ul>
         </footer>
     </div>
     <button onclick="topFunction()" id="scrollA" title="Go to top"><i class="fas fa-chevron-up"></i></button>
