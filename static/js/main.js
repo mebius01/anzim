@@ -1,7 +1,10 @@
+
+hljs.initHighlightingOnLoad();
+hljs.initLineNumbersOnLoad();
+
 var scrollA = document.getElementById('scrollA');
 var scrollB = document.getElementById('scrollB');
 var heightDoc;
-
 window.addEventListener('scroll', function() {
     heightDoc = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     if (document.documentElement.scrollTop > 30) {
@@ -22,13 +25,11 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
-
 function downFunction() {
     document.body.scrollTop = heightDoc;
     document.documentElement.scrollTop = heightDoc;
 }
-var body = document.getElementById('toggle');
-// var el = document.getElementById('toggle__btn');
+
 
 function leftToggleOn() {
     var body = document.getElementById('leftToggleOn');

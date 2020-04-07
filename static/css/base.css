@@ -319,7 +319,7 @@ code {
     .search{
         width: calc(100vw - 50px);
     }
-    .search input{
+    .search__input{
         width: calc(100vw - 62px);
     }
     .toggle-btn--none {
@@ -337,7 +337,7 @@ code {
     .search{
         width: calc(100vw - 50px);
     }
-    .search input{
+    .search__input{
         width: calc(100vw - 62px);
     }
     .toggle-btn--none {
@@ -355,10 +355,10 @@ code {
     .search{
         width: calc(100vw - 50px);
     }
-    .search input{
+    .search__input{
         width: calc(100vw - 62px);
     }
-    .article {
+    .main {
         padding: 10px 0;
     }
     .toggle-btn--none {
@@ -382,7 +382,7 @@ code {
     .search{
         width: calc(100vw - 40px);
     }
-    .search input{
+    .search__input{
         width: calc(100vw - 52px);
     }
     .toggle-btn--none {
@@ -397,7 +397,7 @@ code {
     .aside-right {
         padding: 0 20px;
     }
-    .article {
+    .main {
         padding: 10px 0;
     }
     pre{
@@ -413,7 +413,7 @@ code {
     .search{
         width: calc(100vw - 40px);
     }
-    .search input{
+    .search__input{
         width: calc(100vw - 52px);
     }
     .toggle-btn--none {
@@ -444,7 +444,7 @@ code {
     .search{
         width: calc(100vw - 40px);
     }
-    .search input{
+    .search__input{
         width: calc(100vw - 52px);
     }
     .toggle-btn--none {
