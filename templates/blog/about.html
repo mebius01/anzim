@@ -6,8 +6,8 @@
 {% endblock title %}
 
 {% block content %}
-{% include 'blog/include_aside_left.html' %}
-    <div class="article">
+{% include 'blog/aside_left.html' %}
+    <main class="main">
         <h1>Об этом блоге</h1>
         <div class="body-article">
             <p>
@@ -22,11 +22,10 @@
             <p>
                 В разделе <a class="portfolio" href="{% url 'blog:portfolio' %}">Portfolio</a> будут завершенные проекты и описание стеков, библиотек и технологий, примененных в этих проектах.
             </p>
-            </p>
             <p>
                 Этот сайт в качестве бекенда использует Django с PostgreSQL развернуть на сервере под управлением Debian. Морда сайта рисуется HTML + CSS Grid Layout. Я не дальтоник) просто так сложилось.
             </p>
         </div>
-    </div>
-{% include 'blog/include_aside_right.html' %}
+    </main>
+{% include 'blog/aside_right.html' %}
 {% endblock content %}

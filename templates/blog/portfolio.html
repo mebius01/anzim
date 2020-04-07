@@ -6,12 +6,12 @@
 {% endblock title %}
 
 {% block content %}
-{% include 'blog/include_aside_left.html' %}
-    <div class="article">
+{% include 'blog/aside_left.html' %}
+    <main class="main">
         <h1>Портфолио</h1>
         <div class="body-article">
             {% lorem 5 %}
         </div>
-    </div>
-{% include 'blog/include_aside_right.html' %}
+    </main>
+{% include 'blog/aside_right.html' %}
 {% endblock content %}

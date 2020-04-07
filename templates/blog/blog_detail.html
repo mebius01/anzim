@@ -12,9 +12,8 @@
 </main>
 <div class="aside-right">
     {% for article in article.tags.similar_objects %}
-    <div class="tags-title">
-        <i class="fab fa-connectdevelop"></i>
-        <a class="cool_link" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
+    <div class="tags"><i class="fab fa-connectdevelop"></i>
+        <a class="tags__link cool_link" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
     </div>
     {% endfor %}
 </div>

@@ -1,7 +1,13 @@
-<div class="aside-right">
-    {% for tag in tag_list %}
-        <div class="tags-title">
-            <i class="fas fa-tags"></i> <a class="cool_link" href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a> <span class="num-times">{{ tag.num_times }}</span>
-        </div>
-    {% endfor %}
-</div>
+<aside class="aside-right">
+    <div class="toggle toggle-btn--none" id="toggle__btn" onclick="rightToggleOn()">
+        <i class="fas fa-hamburger"></i>Tag List
+    </div>
+    <div class="aside-right--toggle-on" id="rightToggleOn">    
+        {% for tag in tag_list %}
+            <div class="tags"><i class="fas fa-tags"></i>
+                <a class="tags__link cool_link" href="{% url 'blog:tag_detail' tag.slug %}">{{tag.name}}</a>
+                <span class="num-times">{{ tag.num_times }}</span>
+            </div>
+        {% endfor %}
+    </div>
+</aside>

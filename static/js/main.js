@@ -27,3 +27,18 @@ function downFunction() {
     document.body.scrollTop = heightDoc;
     document.documentElement.scrollTop = heightDoc;
 }
+var body = document.getElementById('toggle');
+// var el = document.getElementById('toggle__btn');
+
+function leftToggleOn() {
+    var body = document.getElementById('leftToggleOn');
+    console.log("toggleOn");
+    body.classList.toggle("aside-left--toggle-on");
+    // body.classList.add("aside-left--toggle-off");
+}
+function rightToggleOn() {
+    var body = document.getElementById('rightToggleOn');
+    console.log("toggleOn");
+    body.classList.toggle("aside-right--toggle-on");
+    // body.classList.add("aside-right--toggle-off");
+} 
