@@ -30,7 +30,6 @@ function downFunction() {
     document.documentElement.scrollTop = heightDoc;
 }
 
-
 function leftToggleOn() {
     var body = document.getElementById('leftToggleOn');
     console.log("toggleOn");
@@ -42,4 +41,19 @@ function rightToggleOn() {
     console.log("toggleOn");
     body.classList.toggle("aside-right--toggle-on");
     // body.classList.add("aside-right--toggle-off");
-} 
+}
+
+
+
+// http://shpargalkablog.ru/2014/12/tabletree.html
+// https://codepen.io/anikey99/pen/GJLdrZ
+function toggleUlOne() {
+    var ulone = document.getElementById("showList");
+    console.log("showList");
+    ulone.classList.toggle('aside__list--toggle');
+}
+function toggleUlTwo() {
+    var ulone = document.getElementById("showListTwo");
+    console.log("showList");
+    ulone.classList.toggle('aside__list--toggle');
+}

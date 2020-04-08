@@ -254,3 +254,28 @@
     background: hsla(0, 86%, 59%, 0.6);
     color: white;
 }
+
+
+.aside {
+    margin: 20px;
+}
+
+.aside__list--toggle {
+    display: none;
+}
+.aside__list {
+    list-style: none;
+}
+.aside__btn {
+    display: block;
+    background: none;
+    border: none;
+    outline: none;
+    color: rgb(109, 109, 250);
+}
+.aside .fas {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
