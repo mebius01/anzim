@@ -40,7 +40,7 @@
 </ul>
 
 <div class="content">
-    <aside class="aside">
+    <!-- <aside class="aside">
         <i class="fas fa-plus" onclick="toggleUlOne()"></i>List 1
         <ul class="aside__list aside__list--toggle" id="showList">
             <li class="aside__item"><a href="" class="aside__link">aside-link-1-1</a></li>
@@ -65,48 +65,41 @@
             <li class="aside__item"><a href="" class="aside__link">aside-link-3-2</a></li>
             <li class="aside__item"><a href="" class="aside__link">aside-link-3-3</a></li>
         </ul>
+    </aside> -->
+    <aside class="aside">
+        <ul class="list">
+            <span class="plus"><i class="fas fa-plus""></i>list 2 nested</span>
+            <ul class="list__nested">
+                <li class="list__item"><a href="" class="list__link">List 1</a></li>
+                <li class="list__item"><a href="" class="list__link">list 2</a></li>
+                <li class="list__item"><a href="" class="list__link">list 3</a></li>
+                <li class="list__item">
+                    <span class="plus"><i class="fas fa-plus""></i>list 3 nested</span>
+                    <ul class="list__nested nested">
+                        <li class="list__item"><a href="">list 2 1</a></li>
+                        <li class="list__item"><a href="">list 2 1</a></li>
+                        <li class="list__item">
+                            <span class="plus"><i class="fas fa-plus""></i>list 3 nested</span>
+                            <ul class="list__nested nested">
+                                <li class="list__item"><a href="" class="list__link">list 3 1</a></li>
+                                <li class="list__item"><a href="" class="list__link">list 3 2</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <span class="plus"><i class="fas fa-plus""></i>list 2 nested</span>
+            <ul class="list__nested">
+                <li class="list__item"><a href="" class="list__link">list 1</a></li>
+                <li class="list__item"><a href="" class="list__link">list 2</a></li>
+                <li class="list__item"><a href="" class="list__link">list 3</a></li>
+                <li class="list__item"><a href="" class="list__link">list 4</a></li>
+            </ul>
+        </ul>
     </aside>
-
     <aside class="aside">
         https://www.w3schools.com/howto/howto_js_treeview.asp
-        <style>
-            ul, #myUL {
-              list-style-type: none;
-            }
-            
-            #myUL {
-              margin: 0;
-              padding: 0;
-            }
-            
-            .caret {
-              cursor: pointer;
-              -webkit-user-select: none; /* Safari 3.1+ */
-              -moz-user-select: none; /* Firefox 2+ */
-              -ms-user-select: none; /* IE 10+ */
-              user-select: none;
-            }
-            
-            .caret::before {
-              content: "\25B6";
-              color: black;
-              display: inline-block;
-              margin-right: 6px;
-            }
-            
-            .caret-down::before {
-              -ms-transform: rotate(90deg); /* IE 9 */
-              -webkit-transform: rotate(90deg); /* Safari */
-              transform: rotate(90deg);  
-            }
-            
-            .nested {
-              display: none;
-            }
-            
-            .active {
-              display: block;
-            }
+       
             </style>
             </head>
             <body>

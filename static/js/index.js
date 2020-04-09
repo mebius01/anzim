@@ -12,18 +12,25 @@ function toggleUlTwo() {
 }
 console.log();
 
-function t() {
-    var toggler = document.getElementsByClassName("caret");
+function treeList() {
+    var toggler = document.getElementsByClassName("plus");
     var i;
     function tic() {
-        this.parentElement.querySelector(".nested").classList.toggle("active");
-        this.classList.toggle("caret-down");
+        this.parentElement.querySelector(".list__nested").classList.toggle("list--active");
+        // this.classList.toggle("caret-down");
     }
     for (i = 0; i < toggler.length; i++) {
         toggler[i].addEventListener("click", tic);
     }
 }
-t();
+function RootTreeList() {
+    var tog = document.getElementsByClassName("rootUl");
+    var i;
+    for (i = 0; i < toggler.length; i++) {
+        tog[i].addEventListener("click", treeList());
+    }
+}
+treeList();
 // function funT() {
 //     console.log("TEST AddLisener");
 // }
