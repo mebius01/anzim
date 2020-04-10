@@ -14,26 +14,33 @@ function triangle() {
 triangle();
 
 // https://eloquent-javascript.karmazzin.ru/chapter2#fizzbuzz
-function FizzBuzz() {
+function FizzBuzz(x) {
     var one = 1;
-    while (one <= 100) {
-        // cons({'one%3':[one,one/3,one%3]});
-        if (one%3 == 0) {
-            cons('Fizz - делится на 3');
-            cons(one);
-        } else
-        if (one%5 == 0 && one%3 != 0) {
-            cons('Buzz - делется на 5 но не три');
-            cons(one);
-        } else
+    while (one <= x) {
         if (one%3 == 0 && one%5 == 0) {
-            cons('FizzBuzz - делится на 3 и на 5');
-            cons(one);
-        }
-        // else cons(one);
+            cons(String(one) + ' = FizzBuzz - делится на 3 и на 5');
+        } else {
+            if (one%5 == 0 && one%3 != 0) {
+                cons(String(one) + ' = Buzz - делется на 5 но не три');
+            } else {
+                if (one%3 == 0) {
+                    cons(String(one) + ' = Fizz - делится на 3');
+                }
+            }
+        }   
         one+=1;
     } 
 }
+FizzBuzz(17);
 
-FizzBuzz()
-
+// https://eloquent-javascript.karmazzin.ru/chapter2#shakhmatnaya-doska
+function chessBoard(x, y) {
+    var lat = "#";
+    var dot = "+";
+    var zero = 0;
+    while (zero <= 8) {
+        cons(lat+dot);
+        zero+=1;
+    } 
+}
+chessBoard(12, 12);
