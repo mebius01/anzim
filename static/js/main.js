@@ -17,9 +17,6 @@ window.addEventListener('scroll', function() {
     if (document.documentElement.scrollTop > heightDoc - 30) {
         scrollB.style.display = "none";
     }
-    // console.log(document.documentElement.scrollHeight);
-    // console.log(document.documentElement.clientHeight);
-    // console.log(document.documentElement.scrollTop);
 });
 function topFunction() {
     document.body.scrollTop = 0;

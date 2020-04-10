@@ -259,8 +259,12 @@ h3 a{
     font-weight: 700;
 }
 p a {
-    color: #627fff;
-    border-bottom: 1px solid;
+    color: rgb(73, 129, 250);
+    font-weight: 400;
+    line-height: 20px;
+}
+ul {
+    list-style: none;
 }
 strong{
     color: #3b3b3b;

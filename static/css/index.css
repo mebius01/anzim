@@ -283,7 +283,7 @@
 .plus {
     display: block;
 }
-.list__nested {
+.list__nested, .nested {
     display: none;
 }
 .list--active {

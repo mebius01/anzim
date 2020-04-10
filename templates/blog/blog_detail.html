@@ -11,10 +11,15 @@
     {% include 'blog/article.html' %}
 </main>
 <div class="aside-right">
-    {% for article in article.tags.similar_objects %}
-    <div class="tags"><i class="fab fa-connectdevelop"></i>
-        <a class="tags__link cool_link" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
+    <div class="toggle toggle-btn--none" id="toggle__btn" onclick="rightToggleOn()">
+        <i class="fas fa-hamburger"></i>Similar Articles
     </div>
-    {% endfor %}
+    <div class="aside-right--toggle-on" id="rightToggleOn">
+        {% for article in article.tags.similar_objects %}
+        <div class="tags"><i class="fab fa-connectdevelop"></i>
+            <a class="tags__link cool_link" href="{% url 'blog:article_detail' article.slug %}">{{article.title}}</a>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock content %}
