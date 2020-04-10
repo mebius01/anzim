@@ -37,10 +37,12 @@ FizzBuzz(17);
 function chessBoard(x, y) {
     var lat = "#";
     var dot = "+";
+    var rez = [];
     var zero = 0;
     while (zero <= 8) {
-        cons(lat+dot);
+        rez.push(lat,dot);
         zero+=1;
+        cons(rez);
     } 
 }
 chessBoard(12, 12);
