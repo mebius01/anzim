@@ -2,6 +2,7 @@
 hljs.initHighlightingOnLoad();
 hljs.initLineNumbersOnLoad();
 
+// top down and bottom up
 var scrollA = document.getElementById('scrollA');
 var scrollB = document.getElementById('scrollB');
 var heightDoc;
@@ -27,16 +28,16 @@ function downFunction() {
     document.documentElement.scrollTop = heightDoc;
 }
 
+
+// hide article list and tag list
 function leftToggleOn() {
     var body = document.getElementById('leftToggleOn');
     console.log("toggleOn");
     body.classList.toggle("aside-left--toggle-on");
-    // body.classList.add("aside-left--toggle-off");
 }
 function rightToggleOn() {
     var body = document.getElementById('rightToggleOn');
     console.log("toggleOn");
     body.classList.toggle("aside-right--toggle-on");
-    // body.classList.add("aside-right--toggle-off");
 }
 

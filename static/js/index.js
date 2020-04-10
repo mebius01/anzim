@@ -1,46 +1,39 @@
-// http://shpargalkablog.ru/2014/12/tabletree.html
-// https://codepen.io/anikey99/pen/GJLdrZ
-function toggleUlOne() {
-    var ulone = document.getElementById("showList");
-    console.log("showList");
-    ulone.classList.toggle('aside__list--toggle');
-}
-function toggleUlTwo() {
-    var ulone = document.getElementById("showListTwo");
-    console.log("showList");
-    ulone.classList.toggle('aside__list--toggle');
-}
-function c(x) {
+function cons(x){
     console.log(x);
 }
-function tic() {
-    this.parentElement.querySelector(".list__nested").classList.toggle("list--active");
-    // this.classList.toggle("caret-down");
-    c(this.parentElement.querySelector(".list__nested"))
 
-}
-function treeList() {
-    var toggler = document.getElementsByClassName("plus");
-    var i;
-    for (i = 0; i < toggler.length; i++) {
-        toggler[i].addEventListener("click", tic);
-    }
-}
-function RootTreeList() {
-    var tog = document.getElementsByClassName("pluss");
-    var i;
-    for (i = 0; i < tog.length; i++) {
-        tog[i].addEventListener("click", tic);
-    }
-}
-// treeList();
-// RootTreeList();
-
+// https://eloquent-javascript.karmazzin.ru/chapter2#treugolnik-v-cikle
 function triangle() {
-    var s = "#######"
-    // while (s.length >= 1) {
-        
-    // }
-    c(s[s.length - 1:])
+    var s = "1234567";
+    var ls = 0;
+    while (s.length >= ls) {
+        cons(s.slice(0, ls));
+        ls = ls + 1;
+    }
 }
-triangle()
+triangle();
+
+// https://eloquent-javascript.karmazzin.ru/chapter2#fizzbuzz
+function FizzBuzz() {
+    var one = 1;
+    while (one <= 100) {
+        // cons({'one%3':[one,one/3,one%3]});
+        if (one%3 == 0) {
+            cons('Fizz - делится на 3');
+            cons(one);
+        } else
+        if (one%5 == 0 && one%3 != 0) {
+            cons('Buzz - делется на 5 но не три');
+            cons(one);
+        } else
+        if (one%3 == 0 && one%5 == 0) {
+            cons('FizzBuzz - делится на 3 и на 5');
+            cons(one);
+        }
+        // else cons(one);
+        one+=1;
+    } 
+}
+
+FizzBuzz()
+
