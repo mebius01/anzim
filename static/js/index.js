@@ -4,7 +4,7 @@ function cons(x){
 
 // https://eloquent-javascript.karmazzin.ru/chapter2#treugolnik-v-cikle
 function triangle() {
-    var s = "1234567";
+    var s = "12345678";
     var ls = 0;
     while (s.length >= ls) {
         cons(s.slice(0, ls));
@@ -34,15 +34,36 @@ function FizzBuzz(x) {
 FizzBuzz(17);
 
 // https://eloquent-javascript.karmazzin.ru/chapter2#shakhmatnaya-doska
-function chessBoard(x, y) {
+function chessBoard(x) {
     var lat = "#";
-    var dot = "+";
-    var rez = [];
-    var zero = 0;
-    while (zero <= 8) {
-        rez.push(lat,dot);
+    var plus = " ";
+    var inter_result = "";
+    var final_result ="";
+    var zero = 1;
+
+    // Функция переворачивает строку
+    String.prototype.reverse = function () {
+        return this.split('').reverse().join('');
+    };
+
+    while (zero <= x) {
+        var k;
+        if (k === undefined) {
+            k = lat;
+        } else {
+            if (k === lat) {
+                k = plus;
+            } else {
+                if (k === plus) {
+                    k = lat;
+                }
+            }
+        }
+        inter_result=inter_result+k;
         zero+=1;
-        cons(rez);
-    } 
+    }
+    final_result=inter_result+"\r\n"+inter_result.reverse()+"\r\n";
+
+    cons(final_result.repeat(x/2));
 }
-chessBoard(12, 12);
+chessBoard(8);
