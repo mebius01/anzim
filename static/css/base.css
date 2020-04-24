@@ -185,7 +185,7 @@ hr{
 .aricle{
     padding-bottom: 20px;
 }
-.article__body h2 {
+.article__body h2, .article__body h3 {
     margin-top: 20px;
 }
 .article__footer{
