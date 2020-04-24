@@ -185,6 +185,9 @@ hr{
 .aricle{
     padding-bottom: 20px;
 }
+.article__body h2 {
+    margin-top: 20px;
+}
 .article__footer{
     display: flex;
     justify-content: space-between;
