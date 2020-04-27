@@ -34,7 +34,7 @@ class ArticleListView(TagMixin, ListView):
                 Q(title__icontains = query) |
                 Q(article__icontains = query))
         else:
-            object_list = self.model.objects.all().order_by('-publish')
+            object_list = self.model.objects.all().order_by('-updated')
         return object_list
 
 class TagView(TagMixin, ListView):
