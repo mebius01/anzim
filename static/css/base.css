@@ -508,4 +508,5 @@ code {
 }
 .toggle .fa-hamburger {
     margin-right: 10px;
+    color: hsla(0, 86%, 59%, 0.6);
 }
