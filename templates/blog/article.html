@@ -1,15 +1,20 @@
 <article class="article">
-    <h1 class="article__title title-h1">{{article.title}}</h1>
-    <div class="article__body">{{article.article|safe }}</div>
-    <div class="article__footer">
-        <div class="tags"><i class="fas fa-tags"></i>
-            {% for item in article.tags.get_queryset %}
-                <a class="tags__link" href="{% url 'blog:tag_detail' item.slug %}">{{item.name}}</a>
-            {% endfor %}
-        </div>
-        <div class="date">
-            <i class="fas fa-calendar-week"></i>
-            {{article.updated|date:"d M Y"}}
-        </div>
+  <h1 class="article__title title-h1">{{article.title}}</h1>
+  <div class="article__body">{{article.article|safe }}</div>
+  <div class="article__footer">
+    <div class="tags">
+      <i class="fas fa-tags"></i>
+      {% for item in article.tags.get_queryset %}
+      <a class="tags__link" href="{% url 'blog:tag_detail' item.slug %}"
+        >{{item.name}}</a
+      >
+      {% endfor %}
     </div>
+    <div class="date">
+      <i class="fas fa-calendar-week"></i>
+      {{article.updated|date:"d M Y"}}
+    </div>
+  </div>
+  <script defer src="https://cdn.commento.io/js/commento.js"></script>
+  <div id="commento"></div>
 </article>

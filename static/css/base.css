@@ -189,6 +189,9 @@ hr{
 .aricle{
     padding-bottom: 20px;
 }
+.article__body h2, .article__body h3 {
+    margin-top: 20px;
+}
 .article__footer{
     display: flex;
     justify-content: space-between;
@@ -509,4 +512,5 @@ code {
 }
 .toggle .fa-hamburger {
     margin-right: 10px;
+    color: hsla(0, 86%, 59%, 0.6);
 }
