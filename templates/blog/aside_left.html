@@ -1,10 +1,17 @@
 <aside class="aside-left">
-    <div class="toggle toggle-btn--none" id="toggle__btn" onclick="leftToggleOn()">
-        <i class="fas fa-hamburger"></i>List of Articles
-    </div>
-    <div class="aside-left--toggle-on" id="leftToggleOn">
-        {% for article in title_list %}
-            <a class="link-block" href="/{{ article.get_absolute_url }}">{{article.title}}</a>
-        {% endfor %}
-    </div>
+  <div
+    class="toggle toggle-btn--none"
+    id="toggle__btn"
+    onclick="leftToggleOn()"
+  >
+    <i class="fas fa-hamburger"></i>List of Articles
+  </div>
+  <div class="aside-left--toggle-on" id="leftToggleOn">
+    <a href="/"><i class="fas fa-home"></i> 8-th</a>
+    {% for article in title_list %}
+    <a class="link-block" href="/{{ article.get_absolute_url }}"
+      >{{article.title}}</a
+    >
+    {% endfor %}
+  </div>
 </aside>
