@@ -20,11 +20,11 @@
     <div class="container">
         <div class="header">
             <nav class="nav">
-                <ul class="nav__list">
+                {% comment %} <ul class="nav__list">
                     <li class="nav__item logo"><a href="/" class="nav__link"><span class="logo__eight">8-th</span></a></li>
                     <li class="nav__item"><a href="{% url 'blog:about' %}" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="{% url 'blog:portfolio' %}" class="nav__link">Portfolio</a></li>
-                </ul>
+                </ul> {% endcomment %}
                 <ul class="nav__list search">
                     <li class="nav__item">
                         <form class="search__form" role="search" action="{% url 'blog:blog_list' %}">
