@@ -20,8 +20,8 @@
         grid-template-areas: "aside-left article aside-right";
     }
     .header{
-        grid-template-columns: 5% 15% auto;
-        grid-template-areas: "logo nav search";
+        grid-template-columns: 15% auto;
+        grid-template-areas: "nav search";
     }
     pre{
         width: calc(100vw - 45vw);
